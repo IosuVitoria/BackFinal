@@ -32,6 +32,8 @@ const postAlumnos = async(req,res) => {
     try {
         const newAlumno = new Alumno(req.body);
         const newUser = new User();
+        const newTutor = new User();
+
         // console.log(req.files)
         // if(req.files.foto){
         //     newAlumno.foto = req.files.foto[0].path
@@ -45,11 +47,19 @@ const postAlumnos = async(req,res) => {
         //let newpass= parseInt(Math.random() * 100);
        
         newUser.email=newAlumno.email;
-        newUser.password=newAlumno.nombre+newAlumno.Curso+"$";
+        newUser.password= newAlumno.nombre+newAlumno.Curso+"$";
+        newUser.password=newUser.password.toUpperCase();
         newUser.role="alumno";
         
+        newTutor.email=newAlumno.email;
+        newTutor.password= newAlumno.tutor1+newAlumno.Curso+"$";
+        newTutor.password=newTutor.password.toUpperCase();
+        newTutor.role="tutor";
+
+        
         const createdUser= await newUser.save();
-        return res.status(201).json({"alumno":createdAlumno,"user":createdUser});
+        const createdTutor= await newTutor.save();
+        return res.status(201).json({"alumno":createdAlumno,"user":createdUser,"tutor":createdTutor});
     } catch (error) {
         return res.status(500).json(error)
     }

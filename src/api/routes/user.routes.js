@@ -6,6 +6,6 @@ const userRoutes = express.Router();
 userRoutes.post('/login', login)
 userRoutes.post('/register', register);
 userRoutes.get('/checksession', isAuth, checkSession);
-userRoutes.put('/passwd',changePassword);
+userRoutes.put('/:id',changePassword);
 
 module.exports = userRoutes;

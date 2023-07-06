@@ -66,8 +66,26 @@ const checkSession = (req, res) => {
     }
 }
 
-const changePassword = (req, res) =>{
-    const newUser = new User;
+const changePassword = async (req, res) =>{
+   
+    try {
+        const {id} = req.params;
+        const {password}=req.body;
+        
+        const userById = await User.find({_id: id});
+        console.log(userById);
+        userById[0].password= bcrypt.hashSync(password,10);
+        
+        userById[0].isLogged=true;
+
+        console.log(userById);
+
+        const updatedUser= await User.findByIdAndUpdate(id,userById[0]);
+        return res.status(200).json(updatedUser);
+    } catch (error) {
+        return res.status(500).json(error)
+        
+    }
 
 }
 
