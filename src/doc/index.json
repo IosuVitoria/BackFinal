@@ -1,0 +1,75 @@
+{
+    "App": "Libreria",
+    "Elements": [
+        {"Libros": [{
+            "Name": "Get Libros",
+            "Description": "Get Libros of DDBB",
+            "EndPoint": "/libros",
+            "Action": "GET",
+            "Body": null,
+            "Parameters": null,
+            "Query": {
+                "limit": "number",
+                "page": "number"
+            },
+            "Response": {
+                "Info": {
+                    "NumPages": "number",
+                    "Limit": "number",
+                    "Page": "number",
+                    "nextPage": "url",
+                    "prevPage": "url"
+                },
+                "Results": ["Libros"] 
+            }
+        },{
+            "Name": "Post Libro",
+            "Description": "Add Libro to DDBB",
+            "EndPoint": "/libros",
+            "Action": "POST",
+            "Body": {
+                "nombre": "string",
+                "tipo": "string",
+                "genero": "string",
+                "portada": "string"
+            },
+            "Parameters": null,
+            "Query": null,
+            "Response": {
+                "_id": "ObjectId",
+                "nombre": "string",
+                "tipo": "string",
+                "genero": "string",
+                "portada": "string"
+            }
+        },{
+            "Name": "Put Libro",
+            "Description": "Add Libro to DDBB",
+            "EndPoint": "/libros/:id",
+            "Action": "PUT",
+            "Body": {
+                "nombre": "string",
+                "tipo": "string",
+                "genero": "string",
+                "portada": "string"
+            },
+            "Parameters": {
+                "id": "ObjectId"
+            },
+            "Query": null,
+            "Response": {
+                "_id": "ObjectId",
+                "nombre": "string",
+                "tipo": "string",
+                "genero": "string",
+                "portada": "string"
+            }
+        }]},
+        {"Autores": [{
+            
+        }]},
+        {"Users": [{
+            
+        }]}
+    ]
+}
