@@ -1,0 +1,64 @@
+////////////////////////////////////////////////////
+
+CREAR ALUMNO    /alumno  POST
+
+- guarda alumno
+
+- crea usuario para alumno
+	- role alumno
+	- genera password nombrealumno+curso+$ en mayusculas
+	- isLogged=false
+- crea usuario role padre
+	- role tutor
+	- genera password nombretutor+curso+$ en mayusculas
+	- isLogged=false
+
+
+
+
+////////////////////////////////////////////////////
+
+CREAR PROFESOR    /profesor  POST
+
+- guarda profesor
+- crea usuario para profesor
+	- role profesor
+	- genera password nombreprofesor+curso+$ en mayusculas
+	- isLogged=false
+
+
+
+////////////////////////////////////////////////////
+
+LOGIN           /user/login   POST
+
+- comprueba email esta registrado
+- condicion si isLogged=false es primer login
+	- devuelve mensaje cambiar password y datos usuario
+	- desde front redirigir a cambio contaseña (formulario para solo cambiar contraseña y repetirla, el resto de datos del usuario ya les tenemos)
+
+
+
+
+CAMBIA PASSWORD     /user/passwd   PUT
+
+- desde front request con email, y password(la nueva)
+- encriptar password nueva y guardar en bbdd
+- devolver usuario como queda tras actualizar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

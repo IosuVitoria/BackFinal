@@ -1,5 +1,7 @@
 const { deleteFile } = require('../../middlewares/delete.file');
 const Profesor = require('../models/profesor.model');
+const User = require('../models/user.model');
+const bcrypt = require("bcrypt");
 
 const getProfesores = async(req,res) => {
     try {
@@ -30,6 +32,8 @@ const postProfesores = async(req,res) => {
     try {
         const newProfesor = new Profesor(req.body);
         console.log(req.files)
+
+        const newUser = new User();
         // if(req.files.foto){
         //     newProfesor.foto = req.files.foto[0].path
         // }
@@ -37,7 +41,14 @@ const postProfesores = async(req,res) => {
         //     newProfesor.foto2 = req.files.foto2[0].path
         // }
         const createdProfesor = await newProfesor.save();
-        return res.status(201).json(createdProfesor);
+        newUser.email=newProfesor.email;
+        newUser.password= newProfesor.nombre+"2023$";
+        newUser.password=newUser.password.toUpperCase();
+        newUser.role="profesor";
+
+        const createdUser= await newUser.save();
+
+        return res.status(201).json({"profesor":createdProfesor,"user":createdUser});
     } catch (error) {
         return res.status(500).json(error)
     }
