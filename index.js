@@ -3,12 +3,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 const cors = require('cors');
 const cloudinary = require('cloudinary').v2;
-const documentacion = require('./src/doc/index.json');
+
 const librosRouter = require('./src/api/routes/libro.routes');
 const autoresRouter = require('./src/api/routes/autor.routes');
 const userRouter = require('./src/api/routes/user.routes');
 
-const {connect} = require('./src/utils/db');
+const { connect } = require('./src/utils/db');
 const { isAuth } = require('./src/middlewares/auth');
 const PORT = process.env.PORT;
 
@@ -33,8 +33,8 @@ app.use((req, res, next) => {
 //CORS --> CORS ORIGIN RESOURCE SHARING --> Intercambio de recursos cruzados -> manera de permir el compartir recursos enntre distintos origenes
 app.use(cors(
   {
-    origin: ["http://localhost:3000","http://localhost:4200","http://127.0.0.1:5500"],  //si sabemos origenes podemos ponerlos en un array
-    // origin: "*", // permito todas las conexiones
+    //origin: ["http://localhost:3000","http://localhost:4200","http://127.0.0.1:5500"],  //si sabemos origenes podemos ponerlos en un array
+    origin: "*", // permito todas las conexiones
     credentials: true
   }
 ))
