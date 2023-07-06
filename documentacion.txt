@@ -2,6 +2,9 @@
 
 CREAR ALUMNO    /alumno  POST
 
+- pone curso en mayusculas
+- valida campo recibido curso para que sea del tipo numero+letra mayuscual (1B)
+- valida campo email
 - guarda alumno
 
 - crea usuario para alumno
@@ -12,39 +15,133 @@ CREAR ALUMNO    /alumno  POST
 	- role tutor
 	- genera password nombretutor+curso+$ en mayusculas
 	- isLogged=false
+- devuelve JSON con alumno creado, usuario de role alumno y usuario de role tutor
 
 
+
+LISTA ALUMNOS   /alumno   GET
+
+- busca en BBDD todos los alumnos
+- develve JSON con todos alumnos
+
+
+ALUMNO BY ID      /alumno/:id   GET
+
+- obtiene id de parametros de url
+- busca en BBDD por id
+- devuelve JSON con el alumno solicitado
+
+
+ALUMNO PAGINADO    /alumno/paged   GET
+
+- cuenta numero de alumnos total
+- seteamos limite para paginar e iniciamos en pagina 1
+- creamos objeto para respuesta con resumen paginacion y resultados
+
+
+
+MODIFICAR ALUMNO   /alumno/:id   PUT
+
+- obtiene id de parametros de url
+- busca en BBDD por id, controla si id no existe
+- si modifica el campo curso se pasa a myuscula y se valida que sea del tipo numero + letra mayuscula (1B)
+- si modifica el campo email se valida que tenga formato correcto
+
+- actualiza alumno en BBDD
+- devuelve JSON con el alumno modificado
+
+
+BORRAR ALUMNO       /alumno/:id   DELETE
+
+- obtiene id de parametros de url
+- busca en BBDD por id y si existe lo borra
+- devuelve JSON con el alumno borrado
 
 
 ////////////////////////////////////////////////////
 
 CREAR PROFESOR    /profesor  POST
 
+- valida campo telefono (9 digitos 0-9)
+- valida campo email
 - guarda profesor
 - crea usuario para profesor
 	- role profesor
-	- genera password nombreprofesor+curso+$ en mayusculas
+	- genera password nombreprofesor+2023$ en mayusculas
 	- isLogged=false
+
+
+LISTA PROFESORES   /profesor   GET
+
+- busca en BBDD todos los profesores
+- develve JSON con todos profesores
+
+
+PROFESOR BY ID      /profesor/:id   GET
+
+- obtiene id de parametros de url
+- busca en BBDD por id
+- devuelve JSON con el alumno solicitado
+
+MODIFICAR PROFESOR   /profesor/:id   PUT
+
+- obtiene id de parametros de url
+- busca en BBDD por id, controla si id no existe
+- si modifica el campo telefono  valida que sea del tipo 9 digitos de 0-9
+- si modifica el campo email se valida que tenga formato correcto
+
+- actualiza alumno en BBDD
+- devuelve JSON con el alumno modificado
+
+BORRAR PROFESOR       /profesor/:id   DELETE
+
+- obtiene id de parametros de url
+- busca en BBDD por id y si existe lo borra
+- devuelve JSON con el profesor borrado
+
+
 
 
 
 ////////////////////////////////////////////////////
 
+USUARIO ADMINISTRADOR email=admin@colegio.com     password=Admin123$
+
+
+REGISTER        /user/register   POST
+
+- recoje todos los campos del request body
+- valida email y password el formato
+- valida email usado (no vamos a crear usuarios con este endpoint asi que esta validacion está pero no se va a usar. Ademas vamos a repetir email en tabla user porque creamos el mismo usuario para el alumno y el padre solo que cambiando el role de alumno a tutor)
+- encripta password
+- devuelve JSON con usuario creado
+
+
 LOGIN           /user/login   POST
 
-- comprueba email esta registrado
+- busca todos los datos del usuario buscando por el email recibido de la request y el role tiene que venir en la request tambien (porque tenemos el mismo email para alumno y tutor)
+- comprueba si email esta registrado
 - condicion si isLogged=false es primer login
 	- devuelve mensaje cambiar password y datos usuario
 	- desde front redirigir a cambio contaseña (formulario para solo cambiar contraseña y repetirla, el resto de datos del usuario ya les tenemos)
+           |      																						   |
+           |
+           V
 
+	CAMBIA PASSWORD     /user/:id   PUT
 
+		- desde front request con id, email, y password(la nueva) y ROLE!!!!
+		- encriptar password nueva y guardar en bbdd
+		- setear islogged=true;
+		- devolver usuario como queda tras actualizar
 
+- si no cumple condicion y accede login
+- compara contraseñas 
+- genera token con JWT
+- devuelve token y objeto user con todos datos del usuario
 
-CAMBIA PASSWORD     /user/passwd   PUT
+////////////////////////////////////////////////////
 
-- desde front request con email, y password(la nueva)
-- encriptar password nueva y guardar en bbdd
-- devolver usuario como queda tras actualizar
 
 
 

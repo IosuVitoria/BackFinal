@@ -1,4 +1,5 @@
 const { deleteFile } = require('../../middlewares/delete.file');
+const { validateEmail, validatePassword, usedEmail, validateCurso } = require("../../utils/validators");
 const Alumno = require('../models/alumno.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
@@ -12,6 +13,48 @@ const getAlumnos = async(req,res) => {
         return res.status(500).json(error)
     }
 }
+
+//GET PAGINADO
+const getAlumnosPaged = async(req,res) => {
+    try {
+        //Recoger querys de numero de pagina(page) y limite por pagina(limit)
+        let {page, limit} = req.query;
+        
+        //Contar el numero de elementos en mi coleccion
+        const numAlumnos = await Alumno.countDocuments();
+        
+        //Si no está seteado seteo el limite a 10
+        limit = limit ? parseInt(limit) || 10 : 10;
+
+        //Comprobar el numero máximo de paginas dependiendo de mi limite
+        let numPages = numAlumnos%limit > 0 ? numAlumnos/limit + 1 : numAlumnos/limit;
+
+        //Si no está seteado seteo el numero de pagina a 1
+        page = page > numPages ? numPages : page < 1 ? 1 :  parseInt(page) || 1;
+       
+        // Calculo el salto(skip) que tengo que dar a mi find para empezar a partir del elemento que quiero
+        const skip = (page - 1) * limit;
+
+        const allAlumnos = await Alumno.find().skip(skip).limit(limit);
+        const response = {
+            info: {
+                numAlumnos: numAlumnos,
+                page: page,
+                limit: limit,
+                nextPage: numPages >= page + 1 ? `/alumno?page=${page + 1}&limit=${limit}` : null,
+                previousPage: page != 1 ? `/alumno?page=${page - 1}&limit=${limit}` : null
+            },
+            results: allAlumnos
+        }
+        return res.status(200).json(response);
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
+
+
+
+
 
 // get de un alumno por id
 const getAlumnoById = async (req, res)=>{
@@ -33,7 +76,16 @@ const postAlumnos = async(req,res) => {
         const newAlumno = new Alumno(req.body);
         const newUser = new User();
         const newTutor = new User();
+        newAlumno.Curso=newAlumno.Curso.toUpperCase();
 
+        //Valida campo curso
+        if (!validateCurso(newAlumno.Curso)){
+            return res.status(400).json({message:"Curso no pasa validacion. ej: 1B"});
+        }
+        //validarEmail
+        if(!validateEmail(newAlumno.email)){
+            return res.status(400).json({message: "Email no valido"})
+        }
         // console.log(req.files)
         // if(req.files.foto){
         //     newAlumno.foto = req.files.foto[0].path
@@ -67,10 +119,13 @@ const postAlumnos = async(req,res) => {
 }
 
 const putAlumnos = async(req,res) => {
-    console.log(req.body)
-    console.log(req.files)
+    // console.log(req.body)
+    // console.log(req.files)
     try {
         const {id} = req.params;
+        
+        const dataAlumno = await Alumno.findById(id);
+        const asigAlumno = dataAlumno.asignaturas;
         const putAlumno = new Alumno(req.body);
         putAlumno._id = id;
         
@@ -80,6 +135,27 @@ const putAlumnos = async(req,res) => {
         // if(req.files.foto2){
         //     putAlumno.foto2 = req.files.foto2[0].path
         // }
+
+
+        //Valida campo curso si existe en el body de la request
+        if (putAlumno.Curso){
+            putAlumno.Curso=putAlumno.Curso.toUpperCase();
+            if (!validateCurso(putAlumno.Curso)){
+                return res.status(400).json({message:"Curso no pasa validacion. ej: 1B"});
+            }
+        }
+        //Valida campo email si existe en el body de la request
+        if (putAlumno.email){
+            //validarEmail
+            if(!validateEmail(putAlumno.email)){
+                return res.status(400).json({message: "Email no valido"})
+            }
+        }
+        if (putAlumno.asignaturas.length == 0){
+            putAlumno.asignaturas=asigAlumno;
+        }
+
+        console.log(putAlumno);
         const updatedAlumno = await Alumno.findByIdAndUpdate(id, putAlumno)
         if(!updatedAlumno){
             return res.status(404).json({message: "El id de este alumno no existe"});
@@ -113,4 +189,4 @@ const deleteAlumnos = async(req,res) => {
 
 }
 
-module.exports = {getAlumnos,getAlumnoById, postAlumnos, putAlumnos, deleteAlumnos}
+module.exports = {getAlumnos,getAlumnoById, getAlumnosPaged, postAlumnos, putAlumnos, deleteAlumnos}

@@ -18,4 +18,13 @@ const usedEmail = async(email) => {
     return users.length;
 }
 
-module.exports = { validatePassword, validateEmail, usedEmail }
+const validateCurso = (curso)=>{
+    const regex= /^[1-6A-F]{2}$/;
+    return regex.test(String(curso));
+}
+const validateTelefono = (telefono)=>{
+    const regex= /^[0-9]{9}$/;
+    return regex.test(String(telefono));
+}
+
+module.exports = { validatePassword, validateEmail, usedEmail,validateCurso,validateTelefono }

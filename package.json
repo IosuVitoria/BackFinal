@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "libros-seed": "node ./src/seeds/libros.seed.js"
+    "asignaturas-seed": "node ./src/seeds/asignaturas.seed.js",
+    "borraAlumnos": "node ./src/seeds/borraAlumnos.js",
+    "alumnos-seed": "node ./src/seeds/alumnos.seed.js"
   },
   "keywords": [],
   "author": "",

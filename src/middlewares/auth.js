@@ -12,13 +12,13 @@ const isAuth = async(req, res, next) => {
         const authorization = req.headers.authorization; //cojo la authorization
 
         if(!authorization){
-            return res.status(401).json({message: "Unauthorized"});
+            return res.status(401).json({message: "No autorizado"});
         }
         
         //Mi authorization es Bearer XXXX -> hago un split para quedarme con XXX
         const token = authorization.split(" ")[1];
         if(!token){
-            return res.status(401).json({message: "Invalid token"});
+            return res.status(401).json({message: "Token no valido"});
         }
 
         const tokenVerified = verifySign(token);
