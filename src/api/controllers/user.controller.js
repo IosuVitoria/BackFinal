@@ -5,28 +5,59 @@ const bcrypt = require("bcrypt");
 
 const login = async(req, res) => {
     try {
-        const userInfo = await User.findOne({email: req.body.email});
 
-        if(!userInfo){
-            return res.status(404).json({message: 'Email is not registered'});
-        }
-
-        console.log(userInfo);
-
-        if (userInfo.isLogged == false){
-            return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo});
-
+        if (req.role === "admin" || req.role === "profesor"){
+            const userInfo = await User.findOne({email: req.body.email});
+            
+            if(!userInfo){
+                return res.status(404).json({message: 'Email no registrado en BBDD'});
+            }
+            if (userInfo.isLogged == false ){
+                 return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo});
+            }
+            else{
+                   
+                if(!bcrypt.compareSync(req.body.password, userInfo.password)){
+                    return res.status(404).json({message: 'Password incorrecta'});
+                }
+                const token = generateSign(userInfo._id, userInfo.email);
+                return res.status(200).json({user:userInfo, token:token});
+            }
         }
         else{
-        
-        
-            if(!bcrypt.compareSync(req.body.password, userInfo.password)){
-                return res.status(404).json({message: 'Password is incorrect'});
+            const userInfo = await User.find({email: req.body.email}); 
+            console.log(req.body.role);
+            if(userInfo.length === 0){
+                return res.status(404).json({message: 'Email no registrado en BBDD'});
             }
-            const token = generateSign(userInfo._id, userInfo.email);
-            return res.status(200).json({user:userInfo, token:token});
+            if (req.body.role === userInfo[0].role && userInfo[0].isLogged === false){
+                return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo[0]});
+            }else if (req.body.role === userInfo[1].role && userInfo[1].isLogged === false){
+                return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo[1]});
+            }
+            else{
+                let userToLog;
+                if (req.body.role === userInfo[0].role){
+                    userToLog=userInfo[0];
+
+                }
+                else{
+                    userToLog=userInfo[1];
+                }
+                   
+                if(!bcrypt.compareSync(req.body.password, userToLog.password)){
+                    console.log(req.body.password);
+                    return res.status(404).json({message: 'Password incorrecta'});
+                }
+                const token = generateSign(userToLog._id, userToLog.email);
+                return res.status(200).json({user:userToLog, token:token});
+
+            }
+
         }
-    } catch (error) {
+   
+    } 
+    catch (error) {
         return res.status(500).json(error); 
     }
 };
@@ -70,7 +101,8 @@ const changePassword = async (req, res) =>{
    
     try {
         const {id} = req.params;
-        const {password}=req.body;
+        const {password, role}=req.body;
+
         
         const userById = await User.find({_id: id});
         console.log(userById);
@@ -81,7 +113,7 @@ const changePassword = async (req, res) =>{
         console.log(userById);
 
         const updatedUser= await User.findByIdAndUpdate(id,userById[0]);
-        return res.status(200).json(updatedUser);
+        return res.status(200).json(userById[0]);
     } catch (error) {
         return res.status(500).json(error)
         

@@ -6,7 +6,7 @@ const asignaturasRouter = express.Router();
 asignaturasRouter.get('/', getAsignaturas)
 asignaturasRouter.get('/:id', getAsignaturaById)
 
-asignaturasRouter.post('/', upload.fields([{name:'foto'}, {name:'foto2'}]), postAsignaturas)
+asignaturasRouter.post('/', postAsignaturas)
 asignaturasRouter.delete('/:id', deleteAsignaturas)
 asignaturasRouter.put('/:id', upload.fields([{name:'foto'}, {name:'foto2'}]), putAsignaturas)
 

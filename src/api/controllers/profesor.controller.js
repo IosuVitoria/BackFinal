@@ -2,6 +2,7 @@ const { deleteFile } = require('../../middlewares/delete.file');
 const Profesor = require('../models/profesor.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
+const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono } = require("../../utils/validators");
 
 const getProfesores = async(req,res) => {
     try {
@@ -31,8 +32,6 @@ const getProfesorById = async (req, res)=>{
 const postProfesores = async(req,res) => {
     try {
         const newProfesor = new Profesor(req.body);
-        console.log(req.files)
-
         const newUser = new User();
         // if(req.files.foto){
         //     newProfesor.foto = req.files.foto[0].path
@@ -40,6 +39,15 @@ const postProfesores = async(req,res) => {
         // if(req.files.foto2){
         //     newProfesor.foto2 = req.files.foto2[0].path
         // }
+        //validarEmail
+        if(!validateEmail(newProfesor.email)){
+            return res.status(400).json({message: "Email no valido"})
+        }
+        //validarTelefono
+        if(!validateTelefono(newProfesor.telefono)){
+            return res.status(400).json({message: "Telefono no valido"})
+        }
+
         const createdProfesor = await newProfesor.save();
         newUser.email=newProfesor.email;
         newUser.password= newProfesor.nombre+"2023$";
@@ -69,6 +77,23 @@ const putProfesores = async(req,res) => {
         // if(req.files.foto2){
         //     putProfesor.foto2 = req.files.foto2[0].path
         // }
+
+        // valida si campo modificado es telefono que cumpla patron
+        if (putProfesor.telefono){
+            //validarTelefono
+            if(!validateTelefono(putProfesor.telefono)){
+                return res.status(400).json({message: "Telefono no valido"})
+             }
+        }
+        //Valida campo email si existe en el body de la request
+        if (putProfesor.email){
+            //validarEmail
+            if(!validateEmail(putProfesor.email)){
+                return res.status(400).json({message: "Email no valido"})
+            }
+        }
+
+
         const updatedProfesor = await Profesor.findByIdAndUpdate(id, putProfesor)
         if(!updatedProfesor){
             return res.status(404).json({message: "El id de este profesor no existe"});
