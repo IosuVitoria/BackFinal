@@ -4,9 +4,11 @@ dotenv.config();
 const cors = require('cors');
 const cloudinary = require('cloudinary').v2;
 
-const librosRouter = require('./src/api/routes/libro.routes');
-const autoresRouter = require('./src/api/routes/autor.routes');
-const userRouter = require('./src/api/routes/user.routes');
+const alumnoRouter = require('./src/api/routes/alumno.routes');
+const profesorRouter = require('./src/api/routes/profesor.routes');
+const asignaturasRoutes = require('./src/api/routes/asignatura.routes');
+const usersRoutes = require('./src/api/routes/user.routes');
+
 
 const { connect } = require('./src/utils/db');
 const { isAuth } = require('./src/middlewares/auth');
@@ -44,12 +46,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use('/libros', librosRouter);
-app.use('/autores',isAuth, autoresRouter);
-app.use('/users', userRouter);
+app.use('/alumno', alumnoRouter);
+app.use("/profesor", profesorRouter);
+app.use('/asignaturas',asignaturasRoutes);
+app.use('/user',usersRoutes);
+
+
 
 app.use('/', (req, res) => {
-  return res.json(documentacion);
+  return res.json("Api de proyecto final");
 })
 
 //ponemos una ruta por si no se encontrase la ruta requerida
