@@ -6,14 +6,26 @@ const bcrypt = require("bcrypt");
 const login = async(req, res) => {
     try {
         const userInfo = await User.findOne({email: req.body.email});
+
         if(!userInfo){
             return res.status(404).json({message: 'Email is not registered'});
         }
-        if(!bcrypt.compareSync(req.body.password, userInfo.password)){
-            return res.status(404).json({message: 'Password is incorrect'});
+
+        console.log(userInfo);
+
+        if (userInfo.isLogged == false){
+            return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo});
+
         }
-        const token = generateSign(userInfo._id, userInfo.email);
-        return res.status(200).json({user:userInfo, token:token});
+        else{
+        
+        
+            if(!bcrypt.compareSync(req.body.password, userInfo.password)){
+                return res.status(404).json({message: 'Password is incorrect'});
+            }
+            const token = generateSign(userInfo._id, userInfo.email);
+            return res.status(200).json({user:userInfo, token:token});
+        }
     } catch (error) {
         return res.status(500).json(error); 
     }
@@ -54,4 +66,11 @@ const checkSession = (req, res) => {
     }
 }
 
-module.exports = {login, register, checkSession}
+const changePassword = (req, res) =>{
+    const newUser = new User;
+
+}
+
+
+
+module.exports = {login, register, checkSession,changePassword}
