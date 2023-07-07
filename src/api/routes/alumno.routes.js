@@ -1,7 +1,7 @@
 const express = require('express');
 const {getAlumnos, getAlumnoById, getAlumnosPaged, postAlumnos, putAlumnos, deleteAlumnos} = require('../controllers/alumno.controller');
 const upload = require('../../middlewares/upload.file');
-const alumnosRouter = express.Router();
+const alumnosRouter = express.Router(); 
 
 alumnosRouter.get('/', getAlumnos)
 alumnosRouter.get('/paged', getAlumnosPaged)
