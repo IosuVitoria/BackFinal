@@ -3,6 +3,7 @@ const { validateEmail, validatePassword, usedEmail, validateCurso } = require(".
 const Alumno = require('../models/alumno.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
+const mailer = require("../../templates/registro");
 
 const getAlumnos = async(req,res) => {
     try {
@@ -86,17 +87,11 @@ const postAlumnos = async(req,res) => {
         if(!validateEmail(newAlumno.email)){
             return res.status(400).json({message: "Email no valido"})
         }
-        // console.log(req.files)
-        // if(req.files.foto){
-        //     newAlumno.foto = req.files.foto[0].path
-        // }
-        // if(req.files.foto2){
-        //     newAlumno.foto2 = req.files.foto2[0].path
-        // }
+      
         const createdAlumno = await newAlumno.save();
-        console.log(createdAlumno);
+        //console.log(createdAlumno);
 
-        //let newpass= parseInt(Math.random() * 100);
+       
        
         newUser.email=newAlumno.email;
         newUser.password= newAlumno.nombre+newAlumno.Curso+"$";
@@ -111,7 +106,15 @@ const postAlumnos = async(req,res) => {
         
         const createdUser= await newUser.save();
         const createdTutor= await newTutor.save();
-        return res.status(201).json({"alumno":createdAlumno,"user":createdUser,"tutor":createdTutor});
+
+
+        
+        if (createdUser || createdTutor){
+            mailer.enviarMail(newAlumno, newUser,newTutor);
+            return res.status(201).json({"alumno":createdAlumno,"user":createdUser,"tutor":createdTutor});
+        }
+        
+        
     } catch (error) {
         return res.status(500).json(error)
     }

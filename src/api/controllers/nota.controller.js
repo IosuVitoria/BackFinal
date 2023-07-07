@@ -1,10 +1,11 @@
 const { deleteFile } = require('../../middlewares/delete.file');
+const { validateEmail, validatePassword, usedEmail, validateCurso, validateNota } = require("../../utils/validators");
 const Nota = require('../models/nota.model');
 const Alumno = require('../models/alumno.model');
 const Asignatura = require('../models/asignatura.model');
 
 const bcrypt = require("bcrypt");
-const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono } = require("../../utils/validators");
+
 
 const getNotas = async(req,res) => {
     try {
@@ -34,10 +35,9 @@ const getNotaById = async (req, res)=>{
 const postNotas = async(req,res) => {
     try {
         const newNota = new Nota(req.body);
-      
-      
-     
-
+        if(!validateNota(newNota.nota)){
+            return res.status(400).json({message: "Nota no valida"})
+        }
         const createdNota = await newNota.save();
        
 
@@ -84,29 +84,25 @@ const insertNotas = async (req, res) => {
 
 const putNotas = async(req,res) => {
     console.log(req.body)
-    console.log(req.files)
+    
     try {
         const {id} = req.params;
-        const putNota = new Nota(req.body);
-        putNota._id = id;
-        
-        // if(req.files.foto){
-        //     putNota.foto = req.files.foto[0].path
-        // }
-        // if(req.files.foto2){
-        //     putNota.foto2 = req.files.foto2[0].path
-        // }
+        console.log(id);
+        const notatoupdate = await Nota.findById(id);
+        console.log(notatoupdate);
+        const {nota} = req.body
+        notatoupdate.nota = nota;
+       
 
         
 
 
-        const updatedNota = await Nota.findByIdAndUpdate(id, putNota)
+        const updatedNota = await Nota.findByIdAndUpdate(id, notatoupdate)
         if(!updatedNota){
             return res.status(404).json({message: "El id de este nota no existe"});
         }
-        
-       
-        return res.status(200).json(putNota);
+    
+        return res.status(200).json(notatoupdate);
     } catch (error) {
         return res.status(500).json(error)
     }

@@ -3,6 +3,7 @@ const Profesor = require('../models/profesor.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
 const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono } = require("../../utils/validators");
+const mailer = require("../../templates/registro");
 
 const getProfesores = async(req,res) => {
     try {
@@ -33,12 +34,7 @@ const postProfesores = async(req,res) => {
     try {
         const newProfesor = new Profesor(req.body);
         const newUser = new User();
-        // if(req.files.foto){
-        //     newProfesor.foto = req.files.foto[0].path
-        // }
-        // if(req.files.foto2){
-        //     newProfesor.foto2 = req.files.foto2[0].path
-        // }
+       
         //validarEmail
         if(!validateEmail(newProfesor.email)){
             return res.status(400).json({message: "Email no valido"})
@@ -55,8 +51,13 @@ const postProfesores = async(req,res) => {
         newUser.role="profesor";
 
         const createdUser= await newUser.save();
-
-        return res.status(201).json({"profesor":createdProfesor,"user":createdUser});
+        
+        if (createdUser){
+            
+            mailer.enviarMailProfe(newProfesor, newUser);
+            return res.status(201).json({"profesor":createdProfesor,"user":createdUser});
+        }
+        
     } catch (error) {
         return res.status(500).json(error)
     }

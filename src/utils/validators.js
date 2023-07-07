@@ -26,5 +26,15 @@ const validateTelefono = (telefono)=>{
     const regex= /^[0-9]{9}$/;
     return regex.test(String(telefono));
 }
+const validateNota = (nota)=>{
+    if (nota === 10){
+        return true;
+    }
+    else{
+        const regex=/^([0-9]{1}(\.[0-9]{1,2})?)$/;
+        return regex.test(Number(nota));
+    }
+  
+}
 
-module.exports = { validatePassword, validateEmail, usedEmail,validateCurso,validateTelefono }
+module.exports = { validatePassword, validateEmail, usedEmail,validateCurso,validateTelefono, validateNota }

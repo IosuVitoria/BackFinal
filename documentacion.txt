@@ -16,6 +16,7 @@ CREAR ALUMNO    /alumno  POST
 	- genera password nombretutor+curso+$ en mayusculas
 	- isLogged=false
 - devuelve JSON con alumno creado, usuario de role alumno y usuario de role tutor
+- envia al mail introducido en el registro los datos de los usuarios generados para acceder a la aplicacion (alumno y tutor)
 
 
 
@@ -69,6 +70,7 @@ CREAR PROFESOR    /profesor  POST
 	- role profesor
 	- genera password nombreprofesor+2023$ en mayusculas
 	- isLogged=false
+- envia al mail introducido en el registro los datos del usuario generado para acceder a la aplicacion
 
 
 LISTA PROFESORES   /profesor   GET
@@ -143,6 +145,50 @@ LOGIN           /user/login   POST
 - devuelve token y objeto user con todos datos del usuario
 
 ////////////////////////////////////////////////////
+
+
+LISTAR NOTAS     /notas  GET
+
+- busca en BBDD todos las notas
+- develve JSON con todas las notas
+
+
+LISTAR NOTA POR ID     /notas/:id    GET
+
+- obtiene id de parametros de url
+- busca en BBDD por id
+- devuelve JSON con la nota solicitada
+
+CREAR NOTA           /notas   POST
+
+- recoge todos datos de formulario (nota 8.7 - id alumno - id asignatura)
+- valida nota que sea de formato --- /^([0-9]{1}(\.[0-9]{1,2})?)$/gm--- o puede ser 10
+- guarda en BBDD
+
+
+MODIFICAR NOTA       /notas/:id   PUT
+
+- recoge id de la nota a modificar de la request
+- recoge la nota a modificar de la BBDD
+- modifica la nota con el valor recogido en la request
+- actualiza la nota en BBDD
+
+
+BORRAR NOTA           /notas/:id   DELETE
+
+- recoge id de la nota a borrar de la request
+- comprueba que existe en BBDD 
+- borra la nota en BBDD
+
+
+/////////////////////////////////////////////
+
+NODEMAILER
+
+- en archivo .env esta configuracion de usuario y contraseña de cuenta de administrador del colegio (email y password)
+- en carpeta templates la funcion que recoge datos de cuenta de correo desde la que se envia, destinatario y cuerpo del mail en html
+- controla error de envio y si es correcto en consola muesta mensaje de ok
+
 
 
 
