@@ -1,0 +1,130 @@
+const { deleteFile } = require('../../middlewares/delete.file');
+const Nota = require('../models/nota.model');
+const Alumno = require('../models/alumno.model');
+const Asignatura = require('../models/asignatura.model');
+
+const bcrypt = require("bcrypt");
+const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono } = require("../../utils/validators");
+
+const getNotas = async(req,res) => {
+    try {
+        // const allNotas = await Nota.find().populate("titulos", "titulo genero tipo");
+        const allNotas = await Nota.find();
+        return res.status(200).json(allNotas);
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
+
+// get de un nota por id
+const getNotaById = async (req, res)=>{
+    try {
+        const {id} = req.params;
+        const notaById = await Nota.find({_id: id});
+        if (!notaById){
+            return res.status(500).json({message:`No existe nota con id: ${id}`})
+        }
+        return res.status(200).json(notaById);
+        
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}
+
+const postNotas = async(req,res) => {
+    try {
+        const newNota = new Nota(req.body);
+      
+      
+     
+
+        const createdNota = await newNota.save();
+       
+
+       
+
+        return res.status(201).json({"nota":createdNota});
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+
+}
+const insertNotas = async (req, res) => {
+   
+    try {
+        const allAsignaturas = await Asignatura.find();
+        const allAlumnos = await Alumno.find();
+        
+        allAlumnos.forEach(alumno => {
+            
+            for (let index = 0; index < (alumno.asignaturas.length -1); index++) {
+
+                let asignatura = alumno.asignaturas[index];
+              
+                let calificacion=parseFloat(Math.random()*10).toFixed(2);
+                
+                const notatosave = new Nota();
+                notatosave.asignatura=asignatura;
+                notatosave.nota=calificacion;
+                notatosave.alumno=alumno._id;
+               
+                console.log(notatosave);
+                
+                const savedNota=  notatosave.save();
+                console.log(savedNota);
+            }
+
+            
+        });
+        return res.status(201).json({"message":"notas creadas"});
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
+
+const putNotas = async(req,res) => {
+    console.log(req.body)
+    console.log(req.files)
+    try {
+        const {id} = req.params;
+        const putNota = new Nota(req.body);
+        putNota._id = id;
+        
+        // if(req.files.foto){
+        //     putNota.foto = req.files.foto[0].path
+        // }
+        // if(req.files.foto2){
+        //     putNota.foto2 = req.files.foto2[0].path
+        // }
+
+        
+
+
+        const updatedNota = await Nota.findByIdAndUpdate(id, putNota)
+        if(!updatedNota){
+            return res.status(404).json({message: "El id de este nota no existe"});
+        }
+        
+       
+        return res.status(200).json(putNota);
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
+
+const deleteNotas = async(req,res) => {
+    try {
+        const {id} = req.params;
+        const deletedNota = await Nota.findByIdAndDelete(id);
+        if(!deletedNota){
+            return res.status(404).json({message: "El id del nota no existe"});
+        }
+        return res.status(200).json(deletedNota)
+        
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+
+}
+
+module.exports = {getNotas,getNotaById, postNotas,insertNotas, putNotas, deleteNotas}

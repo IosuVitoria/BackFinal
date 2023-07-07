@@ -8,6 +8,7 @@ const alumnoRouter = require('./src/api/routes/alumno.routes');
 const profesorRouter = require('./src/api/routes/profesor.routes');
 const asignaturasRoutes = require('./src/api/routes/asignatura.routes');
 const usersRoutes = require('./src/api/routes/user.routes');
+const notasRoutes = require('./src/api/routes/notas.routes');
 
 
 const { connect } = require('./src/utils/db');
@@ -50,6 +51,7 @@ app.use('/alumno', alumnoRouter);
 app.use("/profesor", profesorRouter);
 app.use('/asignaturas',asignaturasRoutes);
 app.use('/user',usersRoutes);
+app.use('/notas',notasRoutes);
 
 
 
