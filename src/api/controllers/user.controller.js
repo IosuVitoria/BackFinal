@@ -81,9 +81,11 @@ const register = async(req, res) => {
         
         //Encriptar Password
         newUser.password = bcrypt.hashSync(newUser.password, 10);
+        newUser.role="admin";
+        newUser.isLogged=true;
         const createdUser = await newUser.save();
 
-        return res.status(201).json(createdUser)
+        return res.status(201).json(newUser)
     } catch (error) {
         return res.status(500).json(error); 
     }

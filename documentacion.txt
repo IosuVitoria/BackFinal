@@ -110,10 +110,12 @@ USUARIO ADMINISTRADOR email=admin@colegio.com     password=Admin123$
 
 REGISTER        /user/register   POST
 
+- se va a usar este endpoint para que admin cree otros usarios admin (jefe estudios, subdirector)
 - recoje todos los campos del request body
 - valida email y password el formato
-- valida email usado (no vamos a crear usuarios con este endpoint asi que esta validacion está pero no se va a usar. Ademas vamos a repetir email en tabla user porque creamos el mismo usuario para el alumno y el padre solo que cambiando el role de alumno a tutor)
+- valida email usado 
 - encripta password
+- setea role a admin y variable isLogge a true
 - devuelve JSON con usuario creado
 
 
