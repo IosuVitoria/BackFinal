@@ -6,15 +6,29 @@ const bcrypt = require("bcrypt");
 const login = async(req, res) => {
     try {
 
-        if (req.role === "admin" || req.role === "profesor"){
+        if (req.body.role === "admin" || req.body.role === "profesor"){
             const userInfo = await User.findOne({email: req.body.email});
             
+            console.log(userInfo);
             if(!userInfo){
+                
                 return res.status(404).json({message: 'Email no registrado en BBDD'});
+                //return res.status(404).json({message: 'Email no registrado en BBDD'});
             }
+            if (req.body.role !== userInfo.role){
+                      
+                return res.status(404).json({message: 'No coincide el role introducido con el registrado en BBDD'});
+            }
+            
             if (userInfo.isLogged == false ){
-                 return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo});
+                if (req.body.password !== userInfo.password){
+                    return res.status(401).json({message:"Password incorrecta",user:userInfo});
+                }
+                else{
+                 return res.status(401).json({message:"Debe cambiar contraseña es el primer login",user:userInfo});
+                }
             }
+            
             else{
                    
                 if(!bcrypt.compareSync(req.body.password, userInfo.password)){
@@ -30,6 +44,10 @@ const login = async(req, res) => {
             if(userInfo.length === 0){
                 return res.status(404).json({message: 'Email no registrado en BBDD'});
             }
+            if (req.body.role != "alumno" || req.body.role != "tutor"){
+                return res.status(404).json({message: 'No coincide el role introducido con el registrado en BBDD'});
+            }
+
             if (req.body.role === userInfo[0].role && userInfo[0].isLogged === false){
                 return res.status(200).json({message:"Debe cambiar contraseña es el primer login",user:userInfo[0]});
             }else if (req.body.role === userInfo[1].role && userInfo[1].isLogged === false){
@@ -58,6 +76,7 @@ const login = async(req, res) => {
    
     } 
     catch (error) {
+        console.log(res);
         return res.status(500).json(error); 
     }
 };
@@ -103,16 +122,16 @@ const changePassword = async (req, res) =>{
    
     try {
         const {id} = req.params;
-        const {password, role}=req.body;
+        const {password}=req.body;
 
         
         const userById = await User.find({_id: id});
-        console.log(userById);
+        console.log(req.body);
         userById[0].password= bcrypt.hashSync(password,10);
         
         userById[0].isLogged=true;
 
-        console.log(userById);
+    
 
         const updatedUser= await User.findByIdAndUpdate(id,userById[0]);
         return res.status(200).json(userById[0]);
