@@ -1,9 +1,13 @@
 const { deleteFile } = require('../../middlewares/delete.file');
 const Profesor = require('../models/profesor.model');
+const Asignatura = require('../models/asignatura.model');
+const Aluno = require('../models/alumno.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
 const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono } = require("../../utils/validators");
 const mailer = require("../../templates/registro");
+const Alumno = require('../models/alumno.model');
+const { json } = require('express');
 
 const getProfesores = async(req,res) => {
     try {
@@ -28,6 +32,56 @@ const getProfesorById = async (req, res)=>{
     } catch (error) {
         return res.status(500).json(error);
     }
+}
+
+const getProfesoresNotas = async (req, res)=>{
+    const {id} = req.params;
+    console.log(id);
+    const allAsignaturas = await Asignatura.find();
+    const allAlumnos = await Alumno.find();
+    let asigProfe=[];
+    let asigAlumnos={};
+    let objectToReturn={
+        idProfesor:id,
+        asignatura:[]
+    };
+    //recorro todas las asignaturas
+    for (let index = 0; index < allAsignaturas.length-1; index++) {
+        //cada vuelta element es la asignatura
+        const element = allAsignaturas[index];
+        
+        if (element.profesor[0].toString()=== id){
+            for (let j = 0; j < allAlumnos.length-1; j++) {
+                const alumno = allAlumnos[j];
+                asigAlumnos={
+                    asignatura:element._id.toString(),
+                    nombre_asignatura:element.nombre,
+                    alumnos:[]
+                }
+                
+                
+            }
+            objectToReturn.asignatura.push(asigAlumnos)
+        }
+        
+    }
+   for (let index = 0; index < objectToReturn.asignatura.length-1; index++) {
+    const element = objectToReturn.asignatura[index];
+    allAlumnos.forEach(alumno => {
+        let longitud=alumno.asignaturas.length;
+        if (alumno.asignaturas.length===1){longitud=2}
+        for (let j = 0; j < longitud-1; j++) {
+            const asignatura = alumno.asignaturas[j].toString();
+            if (element.asignatura === asignatura){
+                element.alumnos.push(alumno._id.toString());
+                break;
+            }
+        }
+    });
+   }
+   
+   
+   return res.status(200).json(objectToReturn)
 }
 
 const postProfesores = async(req,res) => {
@@ -127,4 +181,4 @@ const deleteProfesores = async(req,res) => {
 
 }
 
-module.exports = {getProfesores,getProfesorById, postProfesores, putProfesores, deleteProfesores}
+module.exports = {getProfesores,getProfesorById,getProfesoresNotas, postProfesores, putProfesores, deleteProfesores}

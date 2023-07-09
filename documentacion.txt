@@ -101,7 +101,12 @@ BORRAR PROFESOR       /profesor/:id   DELETE
 - busca en BBDD por id y si existe lo borra
 - devuelve JSON con el profesor borrado
 
+OBTENER ASIGNATURAS QUE IMPARTE UN PROFESOR Y POR CADA ASIGNATURA LOS ALUMNOS QUE LA RECIBEN
+/profesor/notas:id de profesor     GET
 
+- pasar id de profesor en request
+- busca las asignaturas que imparte un profesor y despues rellena por cada asignatura un array con las id de los alumnos que dan esa asignatura
+- devuelve Json con el objeto descrito anteriormente
 
 
 
