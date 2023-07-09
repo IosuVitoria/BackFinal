@@ -144,6 +144,10 @@ LOGIN           /user/login   POST
 - genera token con JWT
 - devuelve token y objeto user con todos datos del usuario
 
+LISTAR USUSARIOS     /users    GET
+
+-listado de todos los usuarios
+
 ////////////////////////////////////////////////////
 
 
