@@ -1,0 +1,256 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Documentacion de la API Colerio el Huargo.",
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "termsOfService": "",
+      "contact": {
+        "email": "admin@colegio.com"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "paths": {
+      "/alumno": {
+        "post": {
+          "tags": [
+            "Alumnos"
+          ],
+          "summary": "Añadir nuevo alumno",
+          "description": "",
+          "operationId": "postAlumnos",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Objeto de alumno para añadir",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties":{
+                  "$ref": "#/definitions/Alumno"
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "$ref": "#/definitions/Alumno"
+              }
+            },
+            "400": {
+              "description": "Error de validacion"
+            },
+            "500": {
+              "description": "Error interno de servidor"
+            }
+          }
+        }
+    }
+},
+"definitions": {
+  "Alumno": {
+    "type": "object",
+    "required": [
+      "nombre",
+      "apellidos",
+      "Curso",
+      "tutor1",
+      "tutorCurso",
+      "email"
+      
+    ],
+    "properties": {
+      "nombre": {
+        "type": "string",
+        "example":"Pepito"
+      },
+      "apellidos": {
+        "type": "string",
+        "example": "Aragon"
+      },
+      "Curso": {
+        "type": "string",
+        "example": "1A"
+      },
+      "tutor1": {
+        "type": "string",
+        "example": "Valeriano Garcia"
+      },
+      "tutorCurso": {
+        "type": "string",
+        "example": "Alberto Gonzalez"
+      },
+      "asignaturas":{
+        "type":"array",
+        "items":{
+          "$ref":"#/definitions/Asignatura"
+        }
+      },
+       
+      
+      "email":{
+        "type":"string",
+        "example":"correo@colegio.com"
+      }
+
+    },
+    "xml": {
+      "name": "Alumno"
+    }
+  }
+  },
+  "Asignatura": {
+    "type": "object",
+    "required": [
+      "nombre",
+      "profesor"
+    ],
+    "properties": {
+      "nombre": {
+        "type": "string",
+        "example":"Matematicas"
+      },
+      "profesor": {
+        "type": "array",
+        "example": "#/definitions/Profesor"
+      }      
+
+    },
+    "xml": {
+      "name": "Asignatura"
+    }
+    },
+    "Nota": {
+      "type": "object",
+      "required": [
+        "nota",
+        "asignatura",
+        "alumno"
+      ],
+      "properties": {
+        "nota": {
+          "type": "integer",
+          "example":"6.45"
+        },
+        "asignatura":{
+          "type":"array",
+          "items":{
+            "$ref":"#/definitions/Asignatura"
+          }
+         
+        },
+        "alumno":{
+          "type":"array",
+          "items":{
+            "$ref":"#/definitions/Alumno"
+          }
+         
+        }    
+  
+      },
+      "xml": {
+        "name": "Nota"
+      }
+      },
+      "Profesor": {
+        "type": "object",
+        "required": [
+          "nombre",
+          "apellidos",
+          "email"
+        ],
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "example":"Basilio"
+          },
+          "apellidos":{
+            "type":"string",
+            "example":"Garcia Unamuno"
+           
+          },
+          "email":{
+            "type":"string",
+            "example":"profesor@colegio.com"
+           
+          }    
+    
+        },
+        "xml": {
+          "name": "Profesor"
+        }
+        },
+        "User": {
+          "type": "object",
+          "required": [
+            "email",
+            "password"
+            
+          ],
+          "properties": {
+            "email": {
+              "type": "string",
+              "example":"usuario@colegio.com"
+            },
+            "password":{
+              "type":"string",
+              "example":"Nombre123$"
+             
+            },
+            "role":{
+              "type":"string",
+              "enum":["admin","alumno","profesor","tutor"]
+             
+            } ,
+            "isLogged":{
+              "type":"boolean"
+
+            }
+      
+          },
+          "xml": {
+            "name": "User"
+          }
+         }
+        }
+  
