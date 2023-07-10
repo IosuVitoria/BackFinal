@@ -1,6 +1,19 @@
+const morganBody = require('morgan-body');
+var fs = require('fs');
 const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
+
+
+
+const bodyParser = require("body-parser");
+//import bodyParser from 'body-parser';
+const log = fs.createWriteStream('colegio.log');
+  // path.join('/', "logs", "express.log"), { flags: "a" }
+
+
+
+
 const cors = require('cors');
 const cloudinary = require('cloudinary').v2;
 
@@ -16,6 +29,12 @@ const { isAuth } = require('./src/middlewares/auth');
 const PORT = process.env.PORT;
 
 
+const swaggerUI = require("swagger-ui-express");
+const swaggerDocument = require("./api-docs.json");
+const swaggerOptions={
+    explorer:false
+};
+
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
     api_key: process.env.CLOUDINARY_KEY,
@@ -23,6 +42,10 @@ cloudinary.config({
   });
 const app = express();
 connect();
+
+// must parse body before morganBody as body will be logged
+app.use(bodyParser.json());
+
 
 //VAMOS A PONER DE RESPUESTA
 app.use((req, res, next) => {
@@ -40,6 +63,16 @@ app.use(cors(
   }
 ))
 
+// hook morganBody to express app
+morganBody(app, {
+  // .. other settings
+  noColors: true,
+  stream: log,
+});
+
+
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -50,8 +83,8 @@ app.use("/profesor", profesorRouter);
 app.use('/asignaturas',asignaturasRoutes);
 app.use('/user',usersRoutes);
 app.use('/notas',notasRoutes);
-app.use('/api-docs', require("./src/api/api-docs"));
-
+// app.use('/api-docs', require("./src/api/api-docs.js"));
+app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerDocument, swaggerOptions));
 
 
 app.use('/', (req, res) => {
@@ -66,5 +99,8 @@ app.use('*', (req, res)=>{
 app.use((error, req, res, next) => {
   return res.status(error.status || 500).json(`Error: ${error.message || "Unexpected error"}`);
 })
+
+
+
 
 app.listen(PORT, () => console.log('listening on port', PORT));

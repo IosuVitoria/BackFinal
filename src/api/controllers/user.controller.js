@@ -63,15 +63,20 @@ const login = async(req, res) => {
                 if (userInfo.role === "profesor"){
                     entidad= await Profesor.find({email: userInfo.email});
                     entidad=entidad[0];
+                    return res.status(200).json({user:userInfo, token:token,entidad:entidad});
                     
                 }
-                if (userInfo.role === "alumno"){
+                else if (userInfo.role === "alumno"){
                     entidad= await Alumno.find({email: userInfo.email});
                     entidad=entidad[0];
+                    return res.status(200).json({user:userInfo, token:token,entidad:entidad});
                     
                 }
+                else{
+                    return res.status(200).json({user:userInfo, token:token});
+                }
                 
-                return res.status(200).json({user:userInfo, token:token,entidad:entidad});
+                
             }
         }
         catch (error) {
