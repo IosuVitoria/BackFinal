@@ -3,7 +3,25 @@ const {getAlumnos, getAlumnoById, getAlumnosPaged, postAlumnos, putAlumnos, dele
 const upload = require('../../middlewares/upload.file');
 const alumnosRouter = express.Router(); 
 
+ /**
+   * @swagger
+   * /alumno:  
+   *  get:
+   *     description: Returns the homepage masdfasdf
+   *     responses:
+   *       200:
+   *         description: hello world
+   */
 alumnosRouter.get('/', getAlumnos)
+ /**
+   * @swagger
+   * /alumno:  
+   *  get:
+   *     description: Returns the homepage masdfasdf
+   *     responses:
+   *       200:
+   *         description: hello world
+   */
 alumnosRouter.get('/paged', getAlumnosPaged)
 alumnosRouter.get('/:id', getAlumnoById)
 

@@ -32,8 +32,6 @@ app.use((req, res, next) => {
   next();
 })
 
-//VAMOS A CONFIGURAR LOS CORS
-//CORS --> CORS ORIGIN RESOURCE SHARING --> Intercambio de recursos cruzados -> manera de permir el compartir recursos enntre distintos origenes
 app.use(cors(
   {
     //origin: ["http://localhost:3000","http://localhost:4200","http://127.0.0.1:5500"],  //si sabemos origenes podemos ponerlos en un array
@@ -52,6 +50,7 @@ app.use("/profesor", profesorRouter);
 app.use('/asignaturas',asignaturasRoutes);
 app.use('/user',usersRoutes);
 app.use('/notas',notasRoutes);
+app.use('/api-docs', require("./src/api/api-docs"));
 
 
 
