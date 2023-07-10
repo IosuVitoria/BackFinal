@@ -1,11 +1,14 @@
 const { generateSign } = require("../../utils/jwt");
 const { validateEmail, validatePassword, usedEmail } = require("../../utils/validators");
+const Alumno = require("../models/alumno.model");
+const Profesor = require("../models/profesor.model");
 const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 
 const login = async(req, res) => {
     try {
         let userInfo;
+        let entidad;
         if (req.body.role === "admin" || req.body.role === "profesor"){
             userInfo = await User.findOne({email: req.body.email});
         }
@@ -57,7 +60,18 @@ const login = async(req, res) => {
                     return res.status(404).json({message: 'Password incorrecta'});
                 }
                 const token = generateSign(userInfo._id, userInfo.email);
-                return res.status(200).json({user:userInfo, token:token});
+                if (userInfo.role === "profesor"){
+                    entidad= await Profesor.find({email: userInfo.email});
+                    entidad=entidad[0];
+                    
+                }
+                if (userInfo.role === "alumno"){
+                    entidad= await Alumno.find({email: userInfo.email});
+                    entidad=entidad[0];
+                    
+                }
+                
+                return res.status(200).json({user:userInfo, token:token,entidad:entidad});
             }
         }
         catch (error) {

@@ -1,11 +1,15 @@
 const { deleteFile } = require('../../middlewares/delete.file');
-const { validateEmail, validatePassword, usedEmail, validateCurso } = require("../../utils/validators");
+const { validateEmail, validatePassword, usedEmail, validateCurso,validarEmailRepetidoAlumno } = require("../../utils/validators");
 const Alumno = require('../models/alumno.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
 const mailer = require("../../templates/registro");
 
+
+ 
+  
 const getAlumnos = async(req,res) => {
+ 
     try {
         // const allAlumnos = await Alumno.find().populate("titulos", "titulo genero tipo");
         const allAlumnos = await Alumno.find();
@@ -86,6 +90,10 @@ const postAlumnos = async(req,res) => {
         //validarEmail
         if(!validateEmail(newAlumno.email)){
             return res.status(400).json({message: "Email no valido"})
+        }
+        //validar Email repetido
+        if(validarEmailRepetidoAlumno(newAlumno.email)){
+            return res.status(400).json({message: "Email repetido"})
         }
       
         const createdAlumno = await newAlumno.save();

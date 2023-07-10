@@ -147,7 +147,7 @@ LOGIN           /user/login   POST
 - si no cumple condicion y accede login
 - compara contraseñas 
 - genera token con JWT
-- devuelve token y objeto user con todos datos del usuario
+- devuelve token y objeto user con todos datos del usuario de tabla usuarios y objeto entidad con todos los datos del usuario de la entidad seleccionada (aluno, profesor)
 
 LISTAR USUSARIOS     /users    GET
 

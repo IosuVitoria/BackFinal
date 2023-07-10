@@ -4,7 +4,7 @@ const Asignatura = require('../models/asignatura.model');
 const Aluno = require('../models/alumno.model');
 const User = require('../models/user.model');
 const bcrypt = require("bcrypt");
-const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono } = require("../../utils/validators");
+const { validateEmail, validatePassword, usedEmail, validateCurso, validateTelefono,validarEmailRepetidoProfesor } = require("../../utils/validators");
 const mailer = require("../../templates/registro");
 const Alumno = require('../models/alumno.model');
 const { json } = require('express');
@@ -96,6 +96,10 @@ const postProfesores = async(req,res) => {
         //validarTelefono
         if(!validateTelefono(newProfesor.telefono)){
             return res.status(400).json({message: "Telefono no valido"})
+        }
+        //validar Email repetido
+        if(validarEmailRepetidoProfesor(newAlumno.email)){
+            return res.status(400).json({message: "Email repetido"})
         }
 
         const createdProfesor = await newProfesor.save();
