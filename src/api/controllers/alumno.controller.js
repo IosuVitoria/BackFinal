@@ -172,12 +172,12 @@ const putAlumnos = async(req,res) => {
             return res.status(404).json({message: "El id de este alumno no existe"});
         }
         
-        if(updatedAlumno.foto !== putAlumno.foto){
-            deleteFile(updatedAlumno.foto);
-        }
-        if(updatedAlumno.foto2 !== putAlumno.foto2){
-            deleteFile(updatedAlumno.foto2);
-        }
+        // if(updatedAlumno.foto !== putAlumno.foto){
+        //     deleteFile(updatedAlumno.foto);
+        // }
+        // if(updatedAlumno.foto2 !== putAlumno.foto2){
+        //     deleteFile(updatedAlumno.foto2);
+        // }
        
         return res.status(200).json(putAlumno);
     } catch (error) {
