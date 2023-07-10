@@ -31,6 +31,7 @@ const PORT = process.env.PORT;
 
 const swaggerUI = require("swagger-ui-express");
 const swaggerDocument = require("./api-docs.json");
+const swaggerFile = require('./swagger_output.json')
 const swaggerOptions={
     explorer:false
 };
@@ -84,7 +85,9 @@ app.use('/asignaturas',asignaturasRoutes);
 app.use('/user',usersRoutes);
 app.use('/notas',notasRoutes);
 // app.use('/api-docs', require("./src/api/api-docs.js"));
-app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerDocument, swaggerOptions));
+//app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerDocument, swaggerOptions));
+app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerFile))
+
 
 
 app.use('/', (req, res) => {
