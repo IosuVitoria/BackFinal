@@ -1,0 +1,204 @@
+
+Request: GET / at Tue Jul 11 2023 12:59:17 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 5.052 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 12:59:17 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 6.773 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 12:59:18 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 3.868 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 12:59:18 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 304 0.518 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 12:59:18 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 4.692 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 12:59:18 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 5.172 ms 
+
+Request: GET /notas/ at Tue Jul 11 2023 13:01:36 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64a80dbb3c0b4ceee1b035f4",
+		"asignatura": [
+			"64a70d0bbb3ddefea8973e27"
+		],
+		"alumno": [
+			"64a70fa8b1863660863cd9ef"
+		],
+		"nota": 1.78,
+		"createdAt": "2023-07-07T13:06:03.432Z",
+		"updatedAt": "2023-07-07T13:06:03.432Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a80dbb3c0b4ceee1b035f5",
+		"asignatura": [
+			"64a70d0bbb3ddefea8973e28"
+		],
+		"alumno": [
+			"64a70fa8b1863660863cd9ef"
+		],
+		"nota": 5.02,
+		"createdAt": "2023-07-07T13:06:03.432Z",
+		"updatedAt": "2023-07-07T13:06:03.432Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a80dbb3c0b4ceee1b035f9",
+		"asignatura": [
+			"64a70d0bbb3ddefea8973e28"
+		],
+		"alumno": [
+			"64a71005b1863660863cd9f5"
+		],
+		"nota": 5.51,
+		"createdAt": "2023-07-07T13:06:03.432Z",
+		"updatedAt": "2023-07-07T13:06:03.432Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a80dbb3c0b4ceee1b035fb",
+		"asignatura": [
+			"64a70d0bbb3ddefea8973e2b"
+		],
+		"alumno": [
+			"64a71005b1863660863cd9f5"
+		],
+		"nota": 9.78,
+		"createdAt": "2023-07-07T13:06:03.432Z",
+		"updatedAt": "2023
+...
+Response: 304 151.430 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 13:01:37 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.828 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 13:01:37 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 1.741 ms 

@@ -25,7 +25,7 @@ const getProfesorById = async (req, res)=>{
         const {id} = req.params;
         const profesorById = await Profesor.find({_id: id});
         if (!profesorById){
-            return res.status(500).json({message:`No existe profesor con id: ${id}`})
+            return res.status(404).json({message:`No existe profesor con id: ${id}`})
         }
         return res.status(200).json(profesorById);
         
@@ -35,6 +35,7 @@ const getProfesorById = async (req, res)=>{
 }
 
 const getProfesoresNotas = async (req, res)=>{
+    try{
     const {id} = req.params;
     console.log(id);
     const allAsignaturas = await Asignatura.find();
@@ -81,7 +82,10 @@ const getProfesoresNotas = async (req, res)=>{
    }
    
    
-   return res.status(200).json(objectToReturn)
+    return res.status(200).json(objectToReturn)
+    } catch (error) {
+        return res.status(500).json(error);
+}
 }
 
 const postProfesores = async(req,res) => {

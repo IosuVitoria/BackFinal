@@ -183,7 +183,7 @@
         "tags": [
           "Profesores"
         ],
-        "description": "",
+        "description": "Obtener todos los profesores",
         "responses": {
           "200": {
             "description": "OK"
@@ -197,13 +197,13 @@
         "tags": [
           "Profesores"
         ],
-        "description": "",
+        "description": "Crea profesor y usuario para login. Usuario enviado por email a email registrado del profesor",
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Profesor y usuario creado"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "No pasa validaciones de formato, telefono y email"
           },
           "500": {
             "description": "Internal Server Error"
@@ -216,7 +216,7 @@
         "tags": [
           "Profesores"
         ],
-        "description": "",
+        "description": "Obtener un profesor por id",
         "parameters": [
           {
             "name": "id",
@@ -227,7 +227,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Obtener un profesor por id"
+          },
+          "404": {
+            "description": "No existe id del profesor solicitado"
           },
           "500": {
             "description": "Internal Server Error"
@@ -238,7 +241,7 @@
         "tags": [
           "Profesores"
         ],
-        "description": "",
+        "description": "Borrado de un profesor por id",
         "parameters": [
           {
             "name": "id",
@@ -249,10 +252,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Borrado de un profesor por id"
           },
           "404": {
-            "description": "Not Found"
+            "description": "No existe id del profesor solicitado"
           },
           "500": {
             "description": "Internal Server Error"
@@ -263,7 +266,7 @@
         "tags": [
           "Profesores"
         ],
-        "description": "",
+        "description": "Modifica el profesor con id enviada",
         "parameters": [
           {
             "name": "id",
@@ -274,13 +277,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Profersor modificado correctamente"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "No pasa validaciones de formato y email"
           },
           "404": {
-            "description": "Not Found"
+            "description": "No existe id del profesor solicitado"
           },
           "500": {
             "description": "Internal Server Error"
@@ -293,7 +296,7 @@
         "tags": [
           "Profesores"
         ],
-        "description": "",
+        "description": "Obtener las asignaturas que imparte el profesor con id pasada en parametros y los alumnos que cursan cada asignatura. Endpoint optimizado para que el profesor pueda calificar a sus alumnos",
         "parameters": [
           {
             "name": "id",
@@ -304,7 +307,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Obtener objeto con datos requeridos del profesor con id pasada"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -314,7 +320,7 @@
         "tags": [
           "Asignaturas"
         ],
-        "description": "",
+        "description": "Obtener todas las asignaturas",
         "responses": {
           "200": {
             "description": "OK"
@@ -328,10 +334,10 @@
         "tags": [
           "Asignaturas"
         ],
-        "description": "",
+        "description": "Crea asignatura",
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Asignatura creada"
           },
           "500": {
             "description": "Internal Server Error"
@@ -344,7 +350,7 @@
         "tags": [
           "Asignaturas"
         ],
-        "description": "",
+        "description": "Obtener asignatura por id solicitada",
         "parameters": [
           {
             "name": "id",
@@ -366,7 +372,7 @@
         "tags": [
           "Asignaturas"
         ],
-        "description": "",
+        "description": "Borrar asignaturas",
         "parameters": [
           {
             "name": "id",
@@ -377,10 +383,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Asignatura borrada"
           },
           "404": {
-            "description": "Not Found"
+            "description": "La asignatura solicitada no existe"
           },
           "500": {
             "description": "Internal Server Error"
@@ -391,7 +397,7 @@
         "tags": [
           "Asignaturas"
         ],
-        "description": "",
+        "description": "Modifica la asignatura con id enviada",
         "parameters": [
           {
             "name": "id",
@@ -402,10 +408,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Asignatura modificada"
           },
           "404": {
-            "description": "Not Found"
+            "description": "No existe id de asignatura solicitada"
           },
           "500": {
             "description": "Internal Server Error"
@@ -418,7 +424,7 @@
         "tags": [
           "Usuarios"
         ],
-        "description": "",
+        "description": "Login de usuario con datos introducidos",
         "parameters": [
           {
             "name": "body",
@@ -427,13 +433,13 @@
               "type": "object",
               "properties": {
                 "role": {
-                  "example": "any"
+                  "example": "admin"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "ejemplo@colegio.com"
                 },
                 "password": {
-                  "example": "any"
+                  "example": "Nombre789!"
                 }
               }
             }
@@ -441,13 +447,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Usuario logeado correctamente"
+          },
+          "400": {
+            "description": "Error de validacion de role"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Password introducida es incorrecta o debe cambiar contraseña"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Email de usuario no encontrado"
           },
           "500": {
             "description": "Internal Server Error"
@@ -460,13 +469,16 @@
         "tags": [
           "Usuarios"
         ],
-        "description": "",
+        "description": "Crea usuario nuevo.",
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Usuario creado y password encriptada"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "No pasa validaciones de formato"
+          },
+          "401": {
+            "description": "Email ya esta registrado"
           },
           "500": {
             "description": "Internal Server Error"
@@ -479,7 +491,7 @@
         "tags": [
           "Usuarios"
         ],
-        "description": "",
+        "description": "Comprueba validez de sesion por token enviado en request",
         "parameters": [
           {
             "name": "authorization",
@@ -489,10 +501,10 @@
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Estado de la sesion valido"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Fallo de autorizacion o token invalido"
           },
           "500": {
             "description": "Internal Server Error"
@@ -505,7 +517,7 @@
         "tags": [
           "Usuarios"
         ],
-        "description": "",
+        "description": "Modifica el password del usuario con id enviada",
         "parameters": [
           {
             "name": "id",
@@ -520,7 +532,7 @@
               "type": "object",
               "properties": {
                 "password": {
-                  "example": "any"
+                  "example": "Usuario567!"
                 }
               }
             }
@@ -528,7 +540,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Password modificada y encriptada"
           },
           "500": {
             "description": "Internal Server Error"
@@ -541,7 +553,15 @@
         "tags": [
           "Usuarios"
         ],
-        "description": "",
+        "description": "Obtener todos los usuarios. Necesaria autentificacion.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -557,10 +577,10 @@
         "tags": [
           "Notas"
         ],
-        "description": "",
+        "description": "Obtener todas las notas",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Lista de todas las notas"
           },
           "500": {
             "description": "Internal Server Error"
@@ -571,13 +591,13 @@
         "tags": [
           "Notas"
         ],
-        "description": "",
+        "description": "Introducir ",
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Nota creada"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "No pasa validacion formato nota. Ej.: 8.30"
           },
           "500": {
             "description": "Internal Server Error"
@@ -590,7 +610,7 @@
         "tags": [
           "Notas"
         ],
-        "description": "",
+        "description": "Obtener nota por id solicitada",
         "parameters": [
           {
             "name": "id",
@@ -601,7 +621,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Lista la nota solicitada"
+          },
+          "404": {
+            "description": "Nota no encontrada con id solicitado"
           },
           "500": {
             "description": "Internal Server Error"
@@ -612,7 +635,7 @@
         "tags": [
           "Notas"
         ],
-        "description": "",
+        "description": "Borrar nota con id solicitado",
         "parameters": [
           {
             "name": "id",
@@ -623,10 +646,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Nota borrada"
           },
           "404": {
-            "description": "Not Found"
+            "description": "No existe la nota con id solicitaod"
           },
           "500": {
             "description": "Internal Server Error"
@@ -637,7 +660,7 @@
         "tags": [
           "Notas"
         ],
-        "description": "",
+        "description": "Modificar notas",
         "parameters": [
           {
             "name": "id",
@@ -652,7 +675,7 @@
               "type": "object",
               "properties": {
                 "nota": {
-                  "example": "any"
+                  "example": "8.31"
                 }
               }
             }
@@ -660,10 +683,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Nota modificada"
           },
           "404": {
-            "description": "Not Found"
+            "description": "No encontrada nota con id solicitado"
           },
           "500": {
             "description": "Internal Server Error"
