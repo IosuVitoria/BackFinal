@@ -32,6 +32,20 @@ const getNotaById = async (req, res)=>{
     }
 }
 
+const getNotaByAlumno = async (req, res)=>{
+    try {
+        const {id} = req.params;
+        const NotaByAlumno = await Nota.find({alumno: id});
+        // if (!notaById){
+        //     return res.status(404).json({message:`No existe nota con id: ${id}`})
+        // }
+        return res.status(200).json(NotaByAlumno);
+        
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}
+
 const postNotas = async(req,res) => {
     try {
         const newNota = new Nota(req.body);
@@ -52,6 +66,11 @@ const postNotas = async(req,res) => {
 const insertNotas = async (req, res) => {
    
     try {
+        const allNotas = await Nota.find();
+        if (allNotas.length > 0){
+            await Nota.collection.drop();
+        console.log("Borrados todas las notas")
+        }
         const allAsignaturas = await Asignatura.find();
         const allAlumnos = await Alumno.find();
         
@@ -123,4 +142,4 @@ const deleteNotas = async(req,res) => {
 
 }
 
-module.exports = {getNotas,getNotaById, postNotas,insertNotas, putNotas, deleteNotas}
+module.exports = {getNotas,getNotaById,getNotaByAlumno, postNotas,insertNotas, putNotas, deleteNotas}
