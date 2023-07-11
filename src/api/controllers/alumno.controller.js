@@ -92,6 +92,9 @@ const getAlumnoByCurso = async (req, res)=>{
 
 const postAlumnos = async(req,res) => {
     try {
+        const ciclo1 = ["64ad4cbf26a02b8028105721","64ad4cbf26a02b8028105722","64ad4cbf26a02b8028105723","64ad4cbf26a02b8028105724","64ad4cbf26a02b8028105726","64ad4cbf26a02b802810572a","64ad4cbf26a02b802810572b","64ad4cbf26a02b802810572d"];
+        const ciclo2 = ["64ad4cbf26a02b8028105721","64ad4cbf26a02b8028105722","64ad4cbf26a02b8028105723","64ad4cbf26a02b8028105724","64ad4cbf26a02b8028105726","64ad4cbf26a02b802810572a","64ad4cbf26a02b802810572b","64ad4cbf26a02b802810572d","64ad4cbf26a02b802810572e"];
+        const ciclo3= ["64ad4cbf26a02b8028105721","64ad4cbf26a02b8028105722","64ad4cbf26a02b8028105723","64ad4cbf26a02b8028105724","64ad4cbf26a02b8028105726","64ad4cbf26a02b802810572a","64ad4cbf26a02b802810572b","64ad4cbf26a02b802810572d","64ad4cbf26a02b8028105727","64ad4cbf26a02b8028105725"];
         const newAlumno = new Alumno(req.body);
         const newUser = new User();
         const newTutor = new User();
@@ -99,6 +102,7 @@ const postAlumnos = async(req,res) => {
 
         //Valida campo curso
         if (!validateCurso(newAlumno.Curso)){
+
             return res.status(400).json({message:"Curso no pasa validacion. ej: 1B"});
         }
         //validarEmail
@@ -106,12 +110,28 @@ const postAlumnos = async(req,res) => {
             return res.status(400).json({message: "Email no valido"})
         }
         //validar Email repetido
-        if(validarEmailRepetidoAlumno(newAlumno.email)){
+        if(!validarEmailRepetidoAlumno(newAlumno.email)){
             return res.status(400).json({message: "Email repetido"})
         }
-      
-        const createdAlumno = await newAlumno.save();
-        //console.log(createdAlumno);
+        
+        // carga array de asignaturas segun el curso introducido
+        if (newAlumno.Curso.toUpperCase() === "1A" || newAlumno.Curso.toUpperCase() === "1B"||newAlumno.Curso.toUpperCase() ===  "2A"|| newAlumno.Curso.toUpperCase() === "2B"){
+            
+            newAlumno.asignaturas=ciclo1;
+        }
+        else if(newAlumno.Curso.toUpperCase() === "3A" ||newAlumno.Curso.toUpperCase() ===  "3B"|| newAlumno.Curso.toUpperCase() === "4A"|| newAlumno.Curso.toUpperCase() === "4B"){
+            newAlumno.asignaturas=ciclo2;
+        }
+
+
+
+                                         
+        else{
+            newAlumno.asignaturas=ciclo3;
+        }
+        //console.log("estoy antes cargar asignaturas " + newAlumno.Curso);
+       const createdAlumno = await newAlumno.save();
+        //console.log(newAlumno);
 
        
        

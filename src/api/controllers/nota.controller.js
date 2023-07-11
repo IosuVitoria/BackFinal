@@ -76,7 +76,7 @@ const insertNotas = async (req, res) => {
         
         allAlumnos.forEach(alumno => {
             
-            for (let index = 0; index < (alumno.asignaturas.length -1); index++) {
+            for (let index = 0; index < (alumno.asignaturas.length); index++) {
 
                 let asignatura = alumno.asignaturas[index];
               
