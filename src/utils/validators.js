@@ -31,7 +31,8 @@ const usedEmail = async(email) => {
 }
 
 const validateCurso = (curso)=>{
-    const regex= /^[1-6A-F]{2}$/;
+    const regex= /^[1-6][A-B]$/;
+    
     return regex.test(String(curso));
 }
 const validateTelefono = (telefono)=>{

@@ -3948,3 +3948,2789 @@ Response Body:
     <symbol viewBox="0 0 20 20" id="unlocked">
       <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
 Response: 304 3.243 ms 
+
+Request: POST /user/login at Tue Jul 11 2023 17:28:46 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"email": "admin@colegio.com",
+	"password": "Admin123$",
+	"role": "admin"
+}
+Response Body:
+{
+	"user": {
+		"_id": "64a703630e6ea120aa93da13",
+		"email": "admin@colegio.com",
+		"password": "$2b$10$CJYBc3EOd8yu0sUz/X10Ou6cVVgRB5opV3dIYmNdJ2rF9eX344uh2",
+		"role": "admin",
+		"isLogged": true,
+		"__v": 0
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcwMzYzMGU2ZWExMjBhYTkzZGExMyIsImVtYWlsIjoiYWRtaW5AY29sZWdpby5jb20iLCJpYXQiOjE2ODkwODkzMjYsImV4cCI6MTY4OTA5MjkyNn0.PD4rXxURIRYhBiaj1-ZSt7yjaIfIItWdVG3rspOlvF4"
+}
+Response: 200 187.526 ms 
+
+Request: POST /user/login at Tue Jul 11 2023 18:12:27 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"email": "admin@colegio.com",
+	"password": "Admin123$",
+	"role": "admin"
+}
+Response Body:
+{
+	"user": {
+		"_id": "64a703630e6ea120aa93da13",
+		"email": "admin@colegio.com",
+		"password": "$2b$10$CJYBc3EOd8yu0sUz/X10Ou6cVVgRB5opV3dIYmNdJ2rF9eX344uh2",
+		"role": "admin",
+		"isLogged": true,
+		"__v": 0
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcwMzYzMGU2ZWExMjBhYTkzZGExMyIsImVtYWlsIjoiYWRtaW5AY29sZWdpby5jb20iLCJpYXQiOjE2ODkwOTE5NDcsImV4cCI6MTY4OTA5NTU0N30.W9LlZnHSiXuYdXLd6R4razjfnc9o70eJMTqe0R3lM18"
+}
+Response: 200 186.187 ms 
+
+Request: GET /profesor at Tue Jul 11 2023 18:12:49 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64a7026e0e6ea120aa93da03",
+		"nombre": "Kiko",
+		"apellidos": "Martinez Diaz",
+		"email": "alberto@colegio.com",
+		"telefono": "666112278",
+		"createdAt": "2023-07-06T18:05:34.019Z",
+		"updatedAt": "2023-07-10T09:33:07.638Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a7028b0e6ea120aa93da07",
+		"nombre": "Roberto",
+		"apellidos": "Gutierrez Lopez",
+		"email": "roberto@colegio.com",
+		"telefono": "666445511",
+		"createdAt": "2023-07-06T18:06:03.960Z",
+		"updatedAt": "2023-07-10T08:28:04.934Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a7029d0e6ea120aa93da0b",
+		"nombre": "Abel",
+		"apellidos": "Cabeza Roman",
+		"email": "abel@colegio.com",
+		"telefono": "666001148",
+		"createdAt": "2023-07-06T18:06:21.118Z",
+		"updatedAt": "2023-07-11T12:12:32.884Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a702ae0e6ea120aa93da0f",
+		"nombre": "Jose",
+		"apellidos": "Diez Diaz",
+		"email": "jose@colegio.com",
+		"telefono": "666002255",
+		"createdAt": "2023-07-06T18:06:38.388Z",
+		"updatedAt": "2023-07-06T18:06:38.388Z",
+		"
+...
+Response: 304 125.096 ms 
+
+Request: GET /asignaturas at Tue Jul 11 2023 18:12:49 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad4cbf26a02b8028105721",
+		"nombre": "Matematicas",
+		"profesor": [
+			"64a7026e0e6ea120aa93da03"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.018Z",
+		"updatedAt": "2023-07-11T12:36:15.018Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105722",
+		"nombre": "Lenguaje",
+		"profesor": [
+			"64a7028b0e6ea120aa93da07"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105723",
+		"nombre": "Sociales",
+		"profesor": [
+			"64a7029d0e6ea120aa93da0b"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105724",
+		"nombre": "Naturales",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105725",
+		"nombre": "Etica",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"cre
+...
+Response: 304 124.394 ms 
+
+Request: GET /alumno at Tue Jul 11 2023 18:12:49 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6a64f0c53e63864f57aa",
+		"nombre": "Pepito",
+		"apellidos": "Garcia Gutierrez",
+		"Curso": "1A",
+		"tutor1": "Pepe Garcia",
+		"tutor2": "Maria Gutierrez",
+		"tutorCurso": "Alberto Martinez",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d"
+		],
+		"email": "pepito.garcia@colegio.com",
+		"__v": 0,
+		"createdAt": "2023-07-11T14:42:44.488Z",
+		"updatedAt": "2023-07-11T14:42:44.488Z"
+	},
+	{
+		"_id": "64ad6a64f0c53e63864f57ab",
+		"nombre": "Manolito",
+		"apellidos": "Perez Estandia",
+		"Curso": "1A",
+		"tutor1": "Manuel Perez",
+		"tutor2": "Lucia Estandia",
+		"tutorCurso": "Alberto Martinez",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b802810572
+...
+Response: 200 254.462 ms 
+
+Request: GET / at Tue Jul 11 2023 19:19:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 3.644 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:19:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 2.209 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 19:19:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 2.353 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 19:19:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 304 0.559 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 19:19:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 4.199 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 19:19:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 4.864 ms 
+
+Request: GET /doc/notas at Tue Jul 11 2023 19:19:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 200 1.013 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 19:19:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 1.611 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 19:19:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 2.239 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 19:19:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 3.367 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 19:19:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 304 0.380 ms 
+
+Request: GET /notas at Tue Jul 11 2023 19:19:38 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec80",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 4.52,
+		"createdAt": "2023-07-11T14:45:33.293Z",
+		"updatedAt": "2023-07-11T14:45:33.293Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec81",
+		"asignatura": [
+			"64ad4cbf26a02b8028105722"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 9.77,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec82",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 4.53,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec85",
+		"asignatura": [
+			"64ad4cbf26a02b802810572a"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 4,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07
+...
+Response: 200 1183.184 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:19:38 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 1.080 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:19:38 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 1.280 ms 
+
+Request: GET /alumnos at Tue Jul 11 2023 19:21:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.451 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:21:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 0.780 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 19:21:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 0.568 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 19:21:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 304 0.359 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 19:21:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 3.611 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 19:21:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 4.560 ms 
+
+Request: GET /alumno at Tue Jul 11 2023 19:21:48 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6a64f0c53e63864f57aa",
+		"nombre": "Pepito",
+		"apellidos": "Garcia Gutierrez",
+		"Curso": "1A",
+		"tutor1": "Pepe Garcia",
+		"tutor2": "Maria Gutierrez",
+		"tutorCurso": "Alberto Martinez",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d"
+		],
+		"email": "pepito.garcia@colegio.com",
+		"__v": 0,
+		"createdAt": "2023-07-11T14:42:44.488Z",
+		"updatedAt": "2023-07-11T14:42:44.488Z"
+	},
+	{
+		"_id": "64ad6a64f0c53e63864f57ab",
+		"nombre": "Manolito",
+		"apellidos": "Perez Estandia",
+		"Curso": "1A",
+		"tutor1": "Manuel Perez",
+		"tutor2": "Lucia Estandia",
+		"tutorCurso": "Alberto Martinez",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b802810572
+...
+Response: 304 243.718 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:21:48 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.242 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:21:48 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 0.598 ms 
+
+Request: GET /notas/alumno/64ad6a64f0c53e63864f57aa at Tue Jul 11 2023 19:22:00 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec80",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 4.52,
+		"createdAt": "2023-07-11T14:45:33.293Z",
+		"updatedAt": "2023-07-11T14:45:33.293Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec81",
+		"asignatura": [
+			"64ad4cbf26a02b8028105722"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 9.77,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec82",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 4.53,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec85",
+		"asignatura": [
+			"64ad4cbf26a02b802810572a"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 4,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07
+...
+Response: 200 121.105 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:22:00 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.273 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:22:00 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 0.714 ms 
+
+Request: GET /asignaturas at Tue Jul 11 2023 19:24:28 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad4cbf26a02b8028105721",
+		"nombre": "Matematicas",
+		"profesor": [
+			"64a7026e0e6ea120aa93da03"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.018Z",
+		"updatedAt": "2023-07-11T12:36:15.018Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105722",
+		"nombre": "Lenguaje",
+		"profesor": [
+			"64a7028b0e6ea120aa93da07"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105723",
+		"nombre": "Sociales",
+		"profesor": [
+			"64a7029d0e6ea120aa93da0b"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105724",
+		"nombre": "Naturales",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105725",
+		"nombre": "Etica",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"cre
+...
+Response: 304 121.347 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:24:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.288 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:24:29 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 0.767 ms 
+
+Request: GET /asignatura at Tue Jul 11 2023 19:24:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.399 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:24:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 0.920 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 19:24:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 0.606 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 19:24:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 304 0.267 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 19:24:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 3.017 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 19:24:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 2.776 ms 
+
+Request: GET /asignaturas at Tue Jul 11 2023 19:24:39 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad4cbf26a02b8028105721",
+		"nombre": "Matematicas",
+		"profesor": [
+			"64a7026e0e6ea120aa93da03"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.018Z",
+		"updatedAt": "2023-07-11T12:36:15.018Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105722",
+		"nombre": "Lenguaje",
+		"profesor": [
+			"64a7028b0e6ea120aa93da07"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105723",
+		"nombre": "Sociales",
+		"profesor": [
+			"64a7029d0e6ea120aa93da0b"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105724",
+		"nombre": "Naturales",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105725",
+		"nombre": "Etica",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"cre
+...
+Response: 304 118.532 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:24:40 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.333 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:24:40 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 1.249 ms 
+
+Request: GET /notas/alumno/64ad6a64f0c53e63864f57ab at Tue Jul 11 2023 19:28:51 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec87",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57ab"
+		],
+		"nota": 7.79,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec88",
+		"asignatura": [
+			"64ad4cbf26a02b8028105722"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57ab"
+		],
+		"nota": 5.88,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec89",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57ab"
+		],
+		"nota": 2.73,
+		"createdAt": "2023-07-11T14:45:33.294Z",
+		"updatedAt": "2023-07-11T14:45:33.294Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0cf29d6af4ea18ec8a",
+		"asignatura": [
+			"64ad4cbf26a02b8028105724"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57ab"
+		],
+		"nota": 4.06,
+		"createdAt": "2023-07-11T14:45:33.295Z",
+		"updatedAt": "2023
+...
+Response: 200 119.347 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:28:51 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.393 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:28:51 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 1.074 ms 
+
+Request: GET /notas/alumno/64ad6a64f0c53e63864f57f1 at Tue Jul 11 2023 19:30:19 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6b0df29d6af4ea18eebb",
+		"asignatura": [
+			"64ad4cbf26a02b8028105726"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 6.78,
+		"createdAt": "2023-07-11T14:45:33.309Z",
+		"updatedAt": "2023-07-11T14:45:33.309Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0df29d6af4ea18eeb9",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 5.86,
+		"createdAt": "2023-07-11T14:45:33.309Z",
+		"updatedAt": "2023-07-11T14:45:33.309Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0df29d6af4ea18eeb7",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 4.25,
+		"createdAt": "2023-07-11T14:45:33.309Z",
+		"updatedAt": "2023-07-11T14:45:33.309Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad6b0df29d6af4ea18eeba",
+		"asignatura": [
+			"64ad4cbf26a02b8028105724"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 0.67,
+		"createdAt": "2023-07-11T14:45:33.309Z",
+		"updatedAt": "2023
+...
+Response: 200 120.800 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:30:19 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.231 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:30:19 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 1.046 ms 
+
+Request: POST /notas/s at Tue Jul 11 2023 19:31:42 GMT+0200, IP: ::1, User Agent: PostmanRuntime/7.32.3
+Request Body:
+{
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105725"
+	]
+}
+Response Body:
+{
+	"message": "notas creadas"
+}
+Response: 201 2218.500 ms 
+
+Request: GET /notas/alumno/64ad6a64f0c53e63864f57f1 at Tue Jul 11 2023 19:32:07 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad91fe84536dd8c50def7f",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 6.19,
+		"createdAt": "2023-07-11T17:31:42.737Z",
+		"updatedAt": "2023-07-11T17:31:42.737Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fe84536dd8c50def80",
+		"asignatura": [
+			"64ad4cbf26a02b8028105722"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 2.83,
+		"createdAt": "2023-07-11T17:31:42.737Z",
+		"updatedAt": "2023-07-11T17:31:42.737Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fe84536dd8c50def81",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 8.47,
+		"createdAt": "2023-07-11T17:31:42.737Z",
+		"updatedAt": "2023-07-11T17:31:42.737Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fe84536dd8c50def82",
+		"asignatura": [
+			"64ad4cbf26a02b8028105724"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57f1"
+		],
+		"nota": 0.54,
+		"createdAt": "2023-07-11T17:31:42.737Z",
+		"updatedAt": "2023
+...
+Response: 200 128.040 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:32:07 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 2.238 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:32:07 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 2.774 ms 
+
+Request: GET /notas/alumno/64ad6a64f0c53e63864f57aa at Tue Jul 11 2023 19:33:12 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad91fd84536dd8c50ded01",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 3.6,
+		"createdAt": "2023-07-11T17:31:42.723Z",
+		"updatedAt": "2023-07-11T17:31:42.723Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fd84536dd8c50ded02",
+		"asignatura": [
+			"64ad4cbf26a02b8028105722"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 7.7,
+		"createdAt": "2023-07-11T17:31:42.724Z",
+		"updatedAt": "2023-07-11T17:31:42.724Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fd84536dd8c50ded03",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 1.28,
+		"createdAt": "2023-07-11T17:31:42.724Z",
+		"updatedAt": "2023-07-11T17:31:42.724Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fd84536dd8c50ded07",
+		"asignatura": [
+			"64ad4cbf26a02b802810572b"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 2.97,
+		"createdAt": "2023-07-11T17:31:42.724Z",
+		"updatedAt": "2023-0
+...
+Response: 200 125.548 ms 
+
+Request: GET /favicon.ico at Tue Jul 11 2023 19:33:12 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 0.720 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:33:12 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 1.053 ms 
+
+Request: GET / at Tue Jul 11 2023 19:41:59 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 302 2.508 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:41:59 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 3.947 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 19:41:59 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 1.831 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 19:41:59 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 1.317 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 19:41:59 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 200 0.531 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 19:41:59 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 4.175 ms 
+
+Request: GET /doc/ at Tue Jul 11 2023 19:43:09 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199
+Response: 304 4.619 ms 
+
+Request: GET /doc/swagger-ui.css at Tue Jul 11 2023 19:43:09 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 3.980 ms 
+
+Request: GET /doc/swagger-ui-init.js at Tue Jul 11 2023 19:43:09 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+
+window.onload = function() {
+  // Build a system
+  var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = decodeURIComponent(url[1]);
+  } else {
+    url = window.location.origin;
+  }
+  var options = {
+  "swaggerDoc": {
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "API El Huargo",
+      "description": ""
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Alumnos",
+        "description": "Alumnos del colegio"
+      },
+      {
+        "name": "Asignaturas",
+        "description": "Asignaturas del colegio"
+      },
+      {
+        "name": "Notas",
+        "description": "Notas del colegio"
+      },
+      {
+        "name": "Profesores",
+        "description": "Profesores del colegio"
+      },
+      {
+        "name": "Usuarios",
+        "description": "Usuarios del API del colegio"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/alumno/": {
+      
+Response: 200 0.973 ms 
+
+Request: GET /doc/swagger-ui-bundle.js at Tue Jul 11 2023 19:43:09 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 8.394 ms 
+
+Request: GET /doc/swagger-ui-standalone-preset.js at Tue Jul 11 2023 19:43:09 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 6.018 ms 
+
+Request: GET /doc/favicon-32x32.png at Tue Jul 11 2023 19:43:10 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response: 304 1.318 ms 
+
+Request: GET /notas/alumno/64ad6a64f0c53e63864f57aa at Tue Jul 11 2023 19:43:26 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad91fd84536dd8c50ded01",
+		"asignatura": [
+			"64ad4cbf26a02b8028105721"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 3.6,
+		"createdAt": "2023-07-11T17:31:42.723Z",
+		"updatedAt": "2023-07-11T17:31:42.723Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fd84536dd8c50ded02",
+		"asignatura": [
+			"64ad4cbf26a02b8028105722"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 7.7,
+		"createdAt": "2023-07-11T17:31:42.724Z",
+		"updatedAt": "2023-07-11T17:31:42.724Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fd84536dd8c50ded03",
+		"asignatura": [
+			"64ad4cbf26a02b8028105723"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 1.28,
+		"createdAt": "2023-07-11T17:31:42.724Z",
+		"updatedAt": "2023-07-11T17:31:42.724Z",
+		"__v": 0
+	},
+	{
+		"_id": "64ad91fd84536dd8c50ded07",
+		"asignatura": [
+			"64ad4cbf26a02b802810572b"
+		],
+		"alumno": [
+			"64ad6a64f0c53e63864f57aa"
+		],
+		"nota": 2.97,
+		"createdAt": "2023-07-11T17:31:42.724Z",
+		"updatedAt": "2023-0
+...
+Response: 304 4258.847 ms 
+
+Request: POST /user/login at Tue Jul 11 2023 19:46:25 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"email": "admiin@colegio.com",
+	"password": "Admin123$",
+	"role": "admin"
+}
+Response Body:
+{
+	"message": "Email no registrado en BBDD"
+}
+Response: 404 127.788 ms 
+
+Request: POST /user/login at Tue Jul 11 2023 19:46:31 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"email": "admin@colegio.com",
+	"password": "Admin123$",
+	"role": "admin"
+}
+Response Body:
+{
+	"user": {
+		"_id": "64a703630e6ea120aa93da13",
+		"email": "admin@colegio.com",
+		"password": "$2b$10$CJYBc3EOd8yu0sUz/X10Ou6cVVgRB5opV3dIYmNdJ2rF9eX344uh2",
+		"role": "admin",
+		"isLogged": true,
+		"__v": 0
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcwMzYzMGU2ZWExMjBhYTkzZGExMyIsImVtYWlsIjoiYWRtaW5AY29sZWdpby5jb20iLCJpYXQiOjE2ODkwOTc1OTEsImV4cCI6MTY4OTEwMTE5MX0.bOCRgZQAFajPs8Zky72W1Xul75azXiS0wP5FgLbV2Z0"
+}
+Response: 200 238.320 ms 
+
+Request: GET /profesor at Tue Jul 11 2023 19:46:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64a7026e0e6ea120aa93da03",
+		"nombre": "Kiko",
+		"apellidos": "Martinez Diaz",
+		"email": "alberto@colegio.com",
+		"telefono": "666112278",
+		"createdAt": "2023-07-06T18:05:34.019Z",
+		"updatedAt": "2023-07-10T09:33:07.638Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a7028b0e6ea120aa93da07",
+		"nombre": "Roberto",
+		"apellidos": "Gutierrez Lopez",
+		"email": "roberto@colegio.com",
+		"telefono": "666445511",
+		"createdAt": "2023-07-06T18:06:03.960Z",
+		"updatedAt": "2023-07-10T08:28:04.934Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a7029d0e6ea120aa93da0b",
+		"nombre": "Abel",
+		"apellidos": "Cabeza Roman",
+		"email": "abel@colegio.com",
+		"telefono": "666001148",
+		"createdAt": "2023-07-06T18:06:21.118Z",
+		"updatedAt": "2023-07-11T12:12:32.884Z",
+		"__v": 0
+	},
+	{
+		"_id": "64a702ae0e6ea120aa93da0f",
+		"nombre": "Jose",
+		"apellidos": "Diez Diaz",
+		"email": "jose@colegio.com",
+		"telefono": "666002255",
+		"createdAt": "2023-07-06T18:06:38.388Z",
+		"updatedAt": "2023-07-06T18:06:38.388Z",
+		"
+...
+Response: 304 123.262 ms 
+
+Request: GET /asignaturas at Tue Jul 11 2023 19:46:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad4cbf26a02b8028105721",
+		"nombre": "Matematicas",
+		"profesor": [
+			"64a7026e0e6ea120aa93da03"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.018Z",
+		"updatedAt": "2023-07-11T12:36:15.018Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105722",
+		"nombre": "Lenguaje",
+		"profesor": [
+			"64a7028b0e6ea120aa93da07"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105723",
+		"nombre": "Sociales",
+		"profesor": [
+			"64a7029d0e6ea120aa93da0b"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105724",
+		"nombre": "Naturales",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105725",
+		"nombre": "Etica",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"cre
+...
+Response: 304 126.652 ms 
+
+Request: GET /alumno at Tue Jul 11 2023 19:46:33 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad6a64f0c53e63864f57aa",
+		"nombre": "Pepito",
+		"apellidos": "Garcia Gutierrez",
+		"Curso": "1A",
+		"tutor1": "Pepe Garcia",
+		"tutor2": "Maria Gutierrez",
+		"tutorCurso": "Alberto Martinez",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d"
+		],
+		"email": "pepito.garcia@colegio.com",
+		"__v": 0,
+		"createdAt": "2023-07-11T14:42:44.488Z",
+		"updatedAt": "2023-07-11T14:42:44.488Z"
+	},
+	{
+		"_id": "64ad6a64f0c53e63864f57ab",
+		"nombre": "Manolito",
+		"apellidos": "Perez Estandia",
+		"Curso": "1A",
+		"tutor1": "Manuel Perez",
+		"tutor2": "Lucia Estandia",
+		"tutorCurso": "Alberto Martinez",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b802810572
+...
+Response: 304 265.859 ms 
+
+Request: GET /asignaturas at Tue Jul 11 2023 19:46:35 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Response Body:
+[
+	{
+		"_id": "64ad4cbf26a02b8028105721",
+		"nombre": "Matematicas",
+		"profesor": [
+			"64a7026e0e6ea120aa93da03"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.018Z",
+		"updatedAt": "2023-07-11T12:36:15.018Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105722",
+		"nombre": "Lenguaje",
+		"profesor": [
+			"64a7028b0e6ea120aa93da07"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105723",
+		"nombre": "Sociales",
+		"profesor": [
+			"64a7029d0e6ea120aa93da0b"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105724",
+		"nombre": "Naturales",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"createdAt": "2023-07-11T12:36:15.019Z",
+		"updatedAt": "2023-07-11T12:36:15.019Z"
+	},
+	{
+		"_id": "64ad4cbf26a02b8028105725",
+		"nombre": "Etica",
+		"profesor": [
+			"64a702ae0e6ea120aa93da0f"
+		],
+		"__v": 0,
+		"cre
+...
+Response: 304 118.998 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 19:46:52 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "22",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "asdfa@adaf.com"
+}
+Response Body:
+{
+	"message": "Email repetido"
+}
+Response: 400 5.358 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 19:48:09 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "22",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response Body:
+{
+	"message": "Email repetido"
+}
+Response: 400 1.342 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 19:49:20 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "22",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response Body:
+{
+	"alumno": {
+		"nombre": "asdfasdfa",
+		"apellidos": "asdfasdfa",
+		"Curso": "22",
+		"tutor1": "aasdfasd",
+		"tutor2": "asdfasdf",
+		"tutorCurso": "asdfasdfas",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d",
+			"64ad4cbf26a02b8028105727",
+			"64ad4cbf26a02b8028105725"
+		],
+		"email": "aadsfassdfa@adaf.com",
+		"_id": "64ad96200bc561081051b869",
+		"createdAt": "2023-07-11T17:49:20.357Z",
+		"updatedAt": "2023-07-11T17:49:20.357Z",
+		"__v": 0
+	},
+	"user": {
+		"role": "alumno",
+		"isLogged": false,
+		"_id": "64ad96200bc561081051b86a",
+		"email": "aadsfassdfa@adaf.com",
+		"password": "ASDFASDFA22$",
+		"__v": 0
+	},
+	"tutor": {
+		"role": "tutor",
+		"isLogged": false,
+		"_id": "64ad96200bc561081051b86b",
+		"email": "aadsfassdfa@adaf.com",
+		"password": "AASDFASD22$",
+		"__v": 
+...
+Response: 201 397.177 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 19:54:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "22",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 11.809 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 19:54:43 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "22",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 10.407 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:11:07 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "22",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response Body:
+{
+	"message": "Curso no pasa validacion. ej: 1B"
+}
+Response: 400 10.400 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:11:21 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 4.448 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:12:08 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response Body:
+{
+	"message": "Curso no pasa validacion. ej: 1B"
+}
+Response: 400 7.805 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:12:44 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 10.553 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:14:17 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 9.786 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:15:25 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 9.397 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:15:49 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 10.121 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:16:20 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response: 500 11.184 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:20:02 GMT+0200, IP: ::ffff:127.0.0.1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response Body:
+{
+	"alumno": {
+		"nombre": "asdfasdfa",
+		"apellidos": "asdfasdfa",
+		"Curso": "2B",
+		"tutor1": "aasdfasd",
+		"tutor2": "asdfasdf",
+		"tutorCurso": "asdfasdfas",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d"
+		],
+		"email": "aadsfassdfa@adaf.com",
+		"_id": "64ad9d4fbf58d28724abfabc",
+		"createdAt": "2023-07-11T18:19:59.081Z",
+		"updatedAt": "2023-07-11T18:19:59.081Z",
+		"__v": 0
+	},
+	"user": {
+		"role": "alumno",
+		"isLogged": false,
+		"_id": "64ad9d4fbf58d28724abfabd",
+		"email": "aadsfassdfa@adaf.com",
+		"password": "ASDFASDFA2B$",
+		"__v": 0
+	},
+	"tutor": {
+		"role": "tutor",
+		"isLogged": false,
+		"_id": "64ad9d4fbf58d28724abfabe",
+		"email": "aadsfassdfa@adaf.com",
+		"password": "AASDFASD2B$",
+		"__v": 0
+	}
+}
+Response: 201 3201.976 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:20:02 GMT+0200, IP: ::ffff:127.0.0.1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "asdfasdfa",
+	"apellidos": "asdfasdfa",
+	"Curso": "2B",
+	"tutor1": "aasdfasd",
+	"tutor2": "asdfasdf",
+	"tutorCurso": "asdfasdfas",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "aadsfassdfa@adaf.com"
+}
+Response Body:
+{
+	"alumno": {
+		"nombre": "asdfasdfa",
+		"apellidos": "asdfasdfa",
+		"Curso": "2B",
+		"tutor1": "aasdfasd",
+		"tutor2": "asdfasdf",
+		"tutorCurso": "asdfasdfas",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d"
+		],
+		"email": "aadsfassdfa@adaf.com",
+		"_id": "64ad9d4fbf58d28724abfac1",
+		"createdAt": "2023-07-11T18:19:59.095Z",
+		"updatedAt": "2023-07-11T18:19:59.095Z",
+		"__v": 0
+	},
+	"user": {
+		"role": "alumno",
+		"isLogged": false,
+		"_id": "64ad9d4fbf58d28724abfac2",
+		"email": "aadsfassdfa@adaf.com",
+		"password": "ASDFASDFA2B$",
+		"__v": 0
+	},
+	"tutor": {
+		"role": "tutor",
+		"isLogged": false,
+		"_id": "64ad9d4fbf58d28724abfac3",
+		"email": "aadsfassdfa@adaf.com",
+		"password": "AASDFASD2B$",
+		"__v": 0
+	}
+}
+Response: 201 3304.421 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:21:01 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "Prueba",
+	"apellidos": "Prueba Prueba",
+	"Curso": "6C",
+	"tutor1": "Pruebatutot",
+	"tutor2": "",
+	"tutorCurso": "Alguno",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "email@prueba"
+}
+Response Body:
+{
+	"message": "Email no valido"
+}
+Response: 400 2.279 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:21:17 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "Prueba",
+	"apellidos": "Prueba Prueba",
+	"Curso": "6C",
+	"tutor1": "Pruebatutot",
+	"tutor2": "",
+	"tutorCurso": "Alguno",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "email@prueba.com"
+}
+Response Body:
+{
+	"alumno": {
+		"nombre": "Prueba",
+		"apellidos": "Prueba Prueba",
+		"Curso": "6C",
+		"tutor1": "Pruebatutot",
+		"tutor2": "",
+		"tutorCurso": "Alguno",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d",
+			"64ad4cbf26a02b8028105727",
+			"64ad4cbf26a02b8028105725"
+		],
+		"email": "email@prueba.com",
+		"_id": "64ad9d9dbf58d28724abfad1",
+		"createdAt": "2023-07-11T18:21:17.175Z",
+		"updatedAt": "2023-07-11T18:21:17.175Z",
+		"__v": 0
+	},
+	"user": {
+		"role": "alumno",
+		"isLogged": false,
+		"_id": "64ad9d9dbf58d28724abfad2",
+		"email": "email@prueba.com",
+		"password": "PRUEBA6C$",
+		"__v": 0
+	},
+	"tutor": {
+		"role": "tutor",
+		"isLogged": false,
+		"_id": "64ad9d9dbf58d28724abfad3",
+		"email": "email@prueba.com",
+		"password": "PRUEBATUTOT6C$",
+		"__v": 0
+	}
+}
+Response: 201 637.934 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:23:40 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "Prueba",
+	"apellidos": "Prueba Prueba",
+	"Curso": "6C",
+	"tutor1": "Pruebatutot",
+	"tutor2": "",
+	"tutorCurso": "Alguno",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "email@prueba.com"
+}
+Response Body:
+{
+	"message": "Curso no pasa validacion. ej: 1B"
+}
+Response: 400 15.245 ms 
+
+Request: POST /alumno at Tue Jul 11 2023 20:25:22 GMT+0200, IP: ::1, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Request Body:
+{
+	"nombre": "Prueba",
+	"apellidos": "Prueba Prueba",
+	"Curso": "6B",
+	"tutor1": "Pruebatutot",
+	"tutor2": "",
+	"tutorCurso": "Alguno",
+	"asignaturas": [
+		"64ad4cbf26a02b8028105721",
+		"64ad4cbf26a02b8028105722",
+		"64ad4cbf26a02b8028105723",
+		"64ad4cbf26a02b8028105724",
+		"64ad4cbf26a02b8028105725",
+		"64ad4cbf26a02b8028105726",
+		"64ad4cbf26a02b8028105727",
+		"64ad4cbf26a02b8028105728",
+		"64ad4cbf26a02b8028105729",
+		"64ad4cbf26a02b802810572a",
+		"64ad4cbf26a02b802810572b",
+		"64ad4cbf26a02b802810572c",
+		"64ad4cbf26a02b802810572d",
+		"64ad4cbf26a02b802810572e"
+	],
+	"email": "email@prueba.com"
+}
+Response Body:
+{
+	"alumno": {
+		"nombre": "Prueba",
+		"apellidos": "Prueba Prueba",
+		"Curso": "6B",
+		"tutor1": "Pruebatutot",
+		"tutor2": "",
+		"tutorCurso": "Alguno",
+		"asignaturas": [
+			"64ad4cbf26a02b8028105721",
+			"64ad4cbf26a02b8028105722",
+			"64ad4cbf26a02b8028105723",
+			"64ad4cbf26a02b8028105724",
+			"64ad4cbf26a02b8028105726",
+			"64ad4cbf26a02b802810572a",
+			"64ad4cbf26a02b802810572b",
+			"64ad4cbf26a02b802810572d",
+			"64ad4cbf26a02b8028105727",
+			"64ad4cbf26a02b8028105725"
+		],
+		"email": "email@prueba.com",
+		"_id": "64ad9e8d6f08203b58940315",
+		"createdAt": "2023-07-11T18:25:17.948Z",
+		"updatedAt": "2023-07-11T18:25:17.948Z",
+		"__v": 0
+	},
+	"user": {
+		"role": "alumno",
+		"isLogged": false,
+		"_id": "64ad9e8d6f08203b58940316",
+		"email": "email@prueba.com",
+		"password": "PRUEBA6B$",
+		"__v": 0
+	},
+	"tutor": {
+		"role": "tutor",
+		"isLogged": false,
+		"_id": "64ad9e8d6f08203b58940317",
+		"email": "email@prueba.com",
+		"password": "PRUEBATUTOT6B$",
+		"__v": 0
+	}
+}
+Response: 201 4075.160 ms 

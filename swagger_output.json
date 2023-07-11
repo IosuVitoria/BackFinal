@@ -709,6 +709,33 @@
           }
         }
       }
+    },
+    "/notas/alumno/{id}": {
+      "get": {
+        "tags": [
+          "Notas"
+        ],
+        "description": "Obtener notas de alumno con id solicitada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notas del alumno solicitado"
+          },
+          "404": {
+            "description": "No hay notas para el alumno solicitado"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   }
 }
