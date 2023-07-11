@@ -75,6 +75,20 @@ const getAlumnoById = async (req, res)=>{
         return res.status(500).json(error);
     }
 }
+// get de un alumno por id
+const getAlumnoByCurso = async (req, res)=>{
+    try {
+        const {curso} = req.params;
+        const alumnoByCurso = await Alumno.find({Curso: curso});
+        if (!alumnoByCurso){
+            return res.status(500).json({message:`No existen alumnos con curso: ${curso}`})
+        }
+        return res.status(200).json(alumnoByCurso);
+        
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}
 
 const postAlumnos = async(req,res) => {
     try {
@@ -200,4 +214,4 @@ const deleteAlumnos = async(req,res) => {
 
 }
 
-module.exports = {getAlumnos,getAlumnoById, getAlumnosPaged, postAlumnos, putAlumnos, deleteAlumnos}
+module.exports = {getAlumnos,getAlumnoById,getAlumnoByCurso, getAlumnosPaged, postAlumnos, putAlumnos, deleteAlumnos}

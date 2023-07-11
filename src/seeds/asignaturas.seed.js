@@ -13,33 +13,33 @@ const baseAsignaturas = [
     },
     {
         nombre: "Lenguaje",
-        profesor:["64a709bf060cfd0d2ca6ae2d"]
+        profesor:["64a7028b0e6ea120aa93da07"]
         
         
     },
     {
         nombre: "Sociales",
-        profesor:["64a7026e0e6ea120aa93da03"]
-        
-    },
-    {
-        nombre: "Naturales",
-        profesor:["64a7026e0e6ea120aa93da03"]
-        
-    },
-    {
-        nombre: "Etica",
         profesor:["64a7029d0e6ea120aa93da0b"]
         
     },
     {
+        nombre: "Naturales",
+        profesor:["64a702ae0e6ea120aa93da0f"]
+        
+    },
+    {
+        nombre: "Etica",
+        profesor:["64a702ae0e6ea120aa93da0f"]
+        
+    },
+    {
         nombre: "Ingles",
-        profesor:["64a7026e0e6ea120aa93da03"]
+        profesor:["64a709bf060cfd0d2ca6ae2d"]
         
     },
     {
         nombre: "Frances",
-        profesor:["64a709bf060cfd0d2ca6ae2d"]
+        profesor:["64abc25083563d1619f51470"]
         
     },
     {
