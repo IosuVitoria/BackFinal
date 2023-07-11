@@ -1,5 +1,6 @@
 const morganBody = require('morgan-body');
 var fs = require('fs');
+const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -7,9 +8,14 @@ dotenv.config();
 
 
 const bodyParser = require("body-parser");
-//import bodyParser from 'body-parser';
-const log = fs.createWriteStream('colegio.log');
-  // path.join('/', "logs", "express.log"), { flags: "a" }
+
+
+//const log = fs.createWriteStream('colegio.log');
+
+const log = fs.createWriteStream(
+  path.join(__dirname, "logs", "colegio.log"), { flags: "a" }
+);
+
 
 
 
@@ -91,7 +97,8 @@ app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
 
 app.use('/', (req, res) => {
-  return res.json("Api de proyecto final");
+  //return res.json("Api de proyecto final");
+  return res.redirect("/doc");
 })
 
 //ponemos una ruta por si no se encontrase la ruta requerida

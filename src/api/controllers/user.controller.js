@@ -23,7 +23,7 @@ const login = async(req, res) => {
             console.log(userInfo);
 
             if (userInfo[0].role === "profesor" || userInfo[0].role === "admin"){
-                return res.status(404).json({message: 'No coincide el role introducido con el registrado en BBDD'});
+                return res.status(400).json({message: 'No coincide el role introducido con el registrado en BBDD'});
             }
             if (req.body.role === userInfo[0].role){
                 userInfo=userInfo[0];
@@ -42,7 +42,7 @@ const login = async(req, res) => {
             }
             if (req.body.role !== userInfo.role){
                       
-                return res.status(404).json({message: 'No coincide el role introducido con el registrado en BBDD'});
+                return res.status(400).json({message: 'No coincide el role introducido con el registrado en BBDD'});
             }
             
             if (userInfo.isLogged == false ){
@@ -93,16 +93,16 @@ const register = async(req, res) => {
         const newUser = new User(req.body);
         //validarEmail
         if(!validateEmail(newUser.email)){
-            return res.status(400).json({message: "Invalid email"})
+            return res.status(400).json({message: "Email no pasa validacion de formato"})
         }
         //validarPassword
         if(!validatePassword(newUser.password)){
-            return res.status(400).json({message: "Invalid pasword"})
+            return res.status(400).json({message: "Contraseña no pasa validacion de formato"})
         }
 
         //validar email usado
         if(await usedEmail(newUser.email)){
-            return res.status(400).json({message: "Email already used"})
+            return res.status(401).json({message: "Email ya esta registrado"})
         }
         
         //Encriptar Password

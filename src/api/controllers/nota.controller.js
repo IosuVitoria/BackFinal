@@ -23,7 +23,7 @@ const getNotaById = async (req, res)=>{
         const {id} = req.params;
         const notaById = await Nota.find({_id: id});
         if (!notaById){
-            return res.status(500).json({message:`No existe nota con id: ${id}`})
+            return res.status(404).json({message:`No existe nota con id: ${id}`})
         }
         return res.status(200).json(notaById);
         
