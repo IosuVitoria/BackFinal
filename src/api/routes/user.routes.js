@@ -7,6 +7,6 @@ userRoutes.post('/login', login)
 userRoutes.post('/register', register);
 userRoutes.get('/checksession', isAuth, checkSession);
 userRoutes.put('/:id',changePassword);
-userRoutes.get('/',isAuth,getUsers);
+userRoutes.get('/',getUsers);
 
 module.exports = userRoutes;
