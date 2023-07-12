@@ -470,6 +470,26 @@
           "Usuarios"
         ],
         "description": "Crea usuario nuevo.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "example": "admin"
+                },
+                "email": {
+                  "example": "ejemplo@colegio.com"
+                },
+                "password": {
+                  "example": "Nombre789!"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Usuario creado y password encriptada"
@@ -572,6 +592,32 @@
         }
       }
     },
+    "/user/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Usuarios"
+        ],
+        "description": "Borrar usuario solicitado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuario borrado"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+    
+    ,
     "/notas/": {
       "get": {
         "tags": [
