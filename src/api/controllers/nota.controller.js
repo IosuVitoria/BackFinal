@@ -35,7 +35,7 @@ const getNotaById = async (req, res)=>{
 const getNotaByAlumno = async (req, res)=>{
     try {
         const {id} = req.params;
-        const NotaByAlumno = await Nota.find({alumno: id});
+        const NotaByAlumno = await Nota.find({alumno: id}).populate("asignatura");
         // if (!notaById){
         //     return res.status(404).json({message:`No existe nota con id: ${id}`})
         // }
