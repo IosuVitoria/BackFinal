@@ -28,6 +28,7 @@ const profesorRouter = require('./src/api/routes/profesor.routes');
 const asignaturasRoutes = require('./src/api/routes/asignatura.routes');
 const usersRoutes = require('./src/api/routes/user.routes');
 const notasRoutes = require('./src/api/routes/notas.routes');
+const avisosRoutes = require('./src/api/routes/avisos.routes');
 
 
 const { connect } = require('./src/utils/db');
@@ -90,6 +91,8 @@ app.use("/profesor", profesorRouter);
 app.use('/asignaturas',asignaturasRoutes);
 app.use('/user',usersRoutes);
 app.use('/notas',notasRoutes);
+app.use('/avisos',avisosRoutes);
+
 // app.use('/api-docs', require("./src/api/api-docs.js"));
 //app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerDocument, swaggerOptions));
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerFile))

@@ -160,5 +160,20 @@ const getUsers = async (req, res)=>{
 }
 
 
+const deleteUser = async(req,res) => {
+    try {
+        const {id} = req.params;
+        const deletedUser = await User.findByIdAndDelete(id);
+        if(!deletedUser){
+            return res.status(404).json({message: "El id del usuario no existe"});
+        }
+        return res.status(200).json(deletedUser)
+        
+    } catch (error) {
+        return res.status(500).json(error)
+    }
 
-module.exports = {login, register, checkSession,changePassword,getUsers}
+}
+
+
+module.exports = {login, register, checkSession,changePassword,getUsers,deleteUser}
